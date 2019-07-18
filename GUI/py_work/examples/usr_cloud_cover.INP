@@ -1,0 +1,26 @@
+#cloudcover
+                         # Location of atmospheric profile file. 
+atmosphere_file ../examples/MLS70.UVSPEC
+mol_modify O3 300. DU
+
+albedo 0.1               # surface albedo
+sza 53.1301
+
+rte_solver twostr        # Radiative transfer equation solver
+pseudospherical
+
+
+mol_abs_param Kato # Dave Kratz' AVHRR parameterization
+wavelength_index 1 32     # Wavelength index range to be selected
+
+
+
+wc_file 1D ../examples/WC50_A.DAT #location of water cloud file
+                                  #Fraction of horizontal cloud covered by clouds;
+cloudcover wc 0.4                                #use independent pixel approximation
+
+
+
+interpret_as_level wc
+
+quiet

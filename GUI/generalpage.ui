@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GeneralPage</class>
+ <widget class="QWidget" name="GeneralPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>894</width>
+    <height>624</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox_4">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>440</y>
+     <width>401</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>光谱设置</string>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget_7">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>371</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_10">
+     <item row="0" column="2">
+      <widget class="QLineEdit" name="lineEdit_wavelength_end">
+       <property name="placeholderText">
+        <string>终止(um)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>wavelength_end</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLineEdit" name="lineEdit_wavelength_step">
+       <property name="placeholderText">
+        <string>步长(um)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>wavelength_step</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEdit_wavelength_start">
+       <property name="placeholderText">
+        <string>起始(um)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>wavelength_start</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_42">
+       <property name="text">
+        <string>波长范围</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLineEdit" name="lineEdit_wavecount_step">
+       <property name="placeholderText">
+        <string>步长(cm-1)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>wavecount_step</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_wavecount_start">
+       <property name="placeholderText">
+        <string>起始(cm-1)</string>
+       </property>
+       <property name="wavecount_start" stdset="0">
+        <string/>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>wavecount_start</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_43">
+       <property name="text">
+        <string>波数范围</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLineEdit" name="lineEdit_wavecount_end">
+       <property name="placeholderText">
+        <string>终止(cm-1)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>wavecount_end</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>180</y>
+     <width>401</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>模式设置</string>
+   </property>
+   <widget class="QWidget" name="horizontalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>371</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,9">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_21">
+       <property name="accessibleName">
+        <string/>
+       </property>
+       <property name="text">
+        <string>运行模式</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox_global_mode">
+       <property name="option_name" stdset="0">
+        <string>global_mode</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>单点模式</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>批处理模式</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>371</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,9">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_23">
+       <property name="text">
+        <string>观测模式</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox_direction">
+       <property name="option_name" stdset="0">
+        <string>direction</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>观测天空方向</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>观测地球方向</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_5">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>10</y>
+     <width>411</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>输出设置</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_21">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>62</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_24">
+     <item>
+      <widget class="QLabel" name="label_19">
+       <property name="text">
+        <string>输出处理</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_24">
+       <property name="text">
+        <string>输出格式</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_25">
+       <property name="text">
+        <string>输出自定义</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_26">
+       <property name="text">
+        <string>输出物理量</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_22">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>20</y>
+      <width>311</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_25">
+     <item>
+      <widget class="QComboBox" name="comboBox_output_process">
+       <property name="option_name" stdset="0">
+        <string>output_process</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>integrate</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>sum</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>rgbnorm</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>rgb_norm</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>rgb</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>per_nm</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>per_cm-1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>per_band</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>spectral&amp;integrate</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox_output_format">
+       <property name="option_name" stdset="0">
+        <string>output_format</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>ascii</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>flexstor</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>netCDF</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>sat_picture</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox_output_user">
+       <property name="option_name" stdset="0">
+        <string>output_user</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>lambda uu</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>wavenumber uu</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox_output_quantity">
+       <property name="option_name" stdset="0">
+        <string>output_quantity</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>reflectivity</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>transmittance</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>brightness</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>radiance&amp;transmittance</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_6">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>180</y>
+     <width>411</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>观测几何</string>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>381</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_7">
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_44">
+       <property name="text">
+        <string>观测俯仰角</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="lineEdit_phi_end">
+       <property name="placeholderText">
+        <string>终止(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>azimuth_angle_end</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_45">
+       <property name="text">
+        <string>观测高度</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLineEdit" name="lineEdit_phi_step">
+       <property name="placeholderText">
+        <string>步长(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>azimuth_angle_step</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEdit_phi_start">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>起始(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>azimuth_angle_start</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_46">
+       <property name="text">
+        <string>观测方位角</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_umu_start">
+       <property name="placeholderText">
+        <string>起始(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>angle_of_pitch_start</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLineEdit" name="lineEdit_umu_end">
+       <property name="placeholderText">
+        <string>终止(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>angle_of_pitch_end</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLineEdit" name="lineEdit_umu_step">
+       <property name="placeholderText">
+        <string>步长(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>angle_of_pitch_step</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEdit_height_start">
+       <property name="placeholderText">
+        <string>起始(km)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>distance_start</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLineEdit" name="lineEdit_height_end">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>终止(km)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>distance_end</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QLineEdit" name="lineEdit_height_step">
+       <property name="placeholderText">
+        <string>步长(km)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>distance_step</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_47">
+       <property name="text">
+        <string>经纬度</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEdit_jingdu">
+       <property name="placeholderText">
+        <string>经度(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>longitude</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLineEdit" name="lineEdit_weidu">
+       <property name="placeholderText">
+        <string>纬度(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>latitude</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_8">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>160</y>
+      <width>381</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_11">
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_48">
+       <property name="text">
+        <string>表面温度</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_49">
+       <property name="text">
+        <string>太阳俯仰角</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEdit_albedo">
+       <property name="option_name" stdset="0">
+        <string>albedo</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_50">
+       <property name="text">
+        <string>反照率</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_sur_temperature">
+       <property name="option_name" stdset="0">
+        <string>sur_temperature</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEdit_sun_umu">
+       <property name="placeholderText">
+        <string>(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>sza</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_51">
+       <property name="text">
+        <string>视点高度</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_52">
+       <property name="text">
+        <string>年中日</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_53">
+       <property name="text">
+        <string>太阳方位角</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="lineEdit_sum_phi">
+       <property name="placeholderText">
+        <string>(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>phi0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="lineEdit_day_of_year">
+       <property name="placeholderText">
+        <string>(1-366)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>day_of_year</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEdit_zout">
+       <property name="placeholderText">
+        <string>(km)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>zout</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>401</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>基本设置</string>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget_9">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>371</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_12">
+     <property name="horizontalSpacing">
+      <number>6</number>
+     </property>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="pushButton_save_run">
+       <property name="text">
+        <string>保存并运行</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="pushButton_open_plot">
+       <property name="text">
+        <string>打开并绘制</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="pushButton_conf_load">
+       <property name="text">
+        <string>载入配置项</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>保存运行</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEdit_plot_file">
+       <property name="option_name" stdset="0">
+        <string>plot_file_path</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QPushButton" name="pushButton_plot">
+       <property name="text">
+        <string>绘制</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_27">
+       <property name="text">
+        <string>打开绘制</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="pushButton_conf_save">
+       <property name="text">
+        <string>另存为</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>配置设置</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEdit_conf_file">
+       <property name="option_name" stdset="0">
+        <string>conf_file_path</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_out_file">
+       <property name="option_name" stdset="0">
+        <string>out_file_path</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="pushButton_run">
+       <property name="text">
+        <string>运行</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>290</y>
+     <width>401</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>辐射设置</string>
+   </property>
+   <widget class="QWidget" name="horizontalLayoutWidget_8">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>371</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="1,9">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_65">
+       <property name="text">
+        <string>单位设置</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox_source_unit">
+       <property name="option_name" stdset="0">
+        <string>source_unit</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>per_nm</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>per_cm-1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>per_band</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_7">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>371</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="1,9">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_64">
+       <property name="text">
+        <string>辐 射 源</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox_source_type">
+       <property name="option_name" stdset="0">
+        <string>source_type</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>thermal</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>solar</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_11">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>371</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_16">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_61">
+       <property name="text">
+        <string>文件路径</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="pushButton_source_file">
+       <property name="text">
+        <string>设置</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEdit_source_file">
+       <property name="option_name" stdset="0">
+        <string>source_file</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
