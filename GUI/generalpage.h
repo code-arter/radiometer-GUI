@@ -59,6 +59,13 @@ private slots:
 
     void on_pushButton_source_file_clicked();
 
+
+    void on_comboBox_multi_set_currentIndexChanged(const QString &arg1);
+
+    void on_comboBox_global_mode_currentIndexChanged(const QString &arg1);
+
+    void on_comboBox_multi_set_activated(int index);
+
 private:
     Ui::GeneralPage *ui;
 };

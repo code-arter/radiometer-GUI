@@ -10,6 +10,9 @@
 #include "cloudpage.h"
 #include "transmodelpage.h"
 #include "waitdialog.h"
+#include "math.h"
+#include <Python.h>
+
 
 namespace Ui {
 class MainWindow;
@@ -35,8 +38,9 @@ public:
     QString read_all(QString path);
 
 
-    void call_python(QString out_path);
-
+    int call_python(QString out_path);
+    int init_python(QString out_path);
+    int close_python();
 
 private slots:
     void on_general_page_conf_clicked(QString path);
@@ -73,6 +77,8 @@ private:
     QMap<QString, QLineEdit *> edit_map;
     QMap<QString, QComboBox *> box_map;
     QString out_path;
+
+    PyObject* pFunhello;
 
     Ui::MainWindow *ui;
 

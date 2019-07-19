@@ -22,6 +22,8 @@ MainWindow::MainWindow(QString python_path, QString scripts_path, QWidget *paren
     this->wait_dialog = new WaitDialog(this);
     this->wait_dialog->hide();
 
+    this->pFunhello = NULL;
+
 
     ui->tabWidget->addTab(general_page, QStringLiteral("主页"));
     ui->tabWidget->addTab(atmosphere_page, QStringLiteral("大气廓线"));
@@ -30,9 +32,8 @@ MainWindow::MainWindow(QString python_path, QString scripts_path, QWidget *paren
     ui->tabWidget->addTab(trans_mode_page, QStringLiteral("辐射传输计算模型"));
     ui->tabWidget->addTab(input_conf_page, QStringLiteral("显示输入项"));
 
-
-
     this->init_widget_list();
+    this->init_python("");
 
     connect(this->general_page, SIGNAL(GeneralSaveConfEvent(QString)),this,SLOT(on_general_page_conf_clicked(QString)));
     connect(this->general_page, SIGNAL(GeneralLoadConfEvent(QString)),this,SLOT(on_general_page_conf_load_clicked(QString)));
@@ -182,43 +183,58 @@ void MainWindow::on_general_page_conf_load_clicked(QString path)
 {
     this->load_conf(path);
 }
-
-void MainWindow::call_python(QString out_path)
+int MainWindow::close_python()
 {
-    QStringList args;
-    this->p = new QProcess(this);
-    args.append("-i");
-
-    args.append(this->scripts_path);
-    QString strArg;
-    strArg.append(out_path);
-    //strArg.append(QString("-i"));
-    p->setNativeArguments(strArg);
-
-    p->start(this->python_path, args);
-
-    connect(p , SIGNAL(readyReadStandardOutput()) , this , SLOT(on_readoutput()));
+   Py_Finalize();
 }
+int MainWindow::init_python(QString out_path)
+{
+    QFileInfo fileinfo(this->python_path);
+    QString python_home = fileinfo.path();
+    const char *p = python_home.toStdString().c_str();
+    char *tmp=const_cast<char*>(p);
+    Py_SetPythonHome(tmp);
+
+    Py_Initialize();
+    if(!Py_IsInitialized())
+    {
+       return -1;
+    }
+
+    PyObject* pModule = PyImport_ImportModule("process_qt_input");  // 这里的test_py就是创建的python文件
+    if (!pModule)
+    {
+        cout<< "Cant open python file!\n" << endl;
+        return -1;
+    }
+    PyObject* pFunhello= PyObject_GetAttrString(pModule,"run");  // 这里的hellow就是python文件定义的函数
+    if(!pFunhello)
+    {
+        cout<<"Get function hello failed"<<endl;
+        return -1;
+    }
+    this->pFunhello = pFunhello;
+}
+
+ int MainWindow::call_python(QString out_path)
+{
+
+    string tmp_path = out_path.toStdString();
+    string script_path = this->scripts_path.toStdString();
+    PyObject_CallFunction(this->pFunhello, "ss", tmp_path.c_str(), script_path.c_str());
+}
+
 void MainWindow::on_readoutput()
 {
-    qDebug()<<QString::fromLocal8Bit(this->p->readAllStandardError());
-
     QString out_str = this->read_all(this->std_out_path);
 
-    p->close();
-    p->waitForFinished();
-    if(p != NULL)
-        delete p;
-    this->p = NULL;
     this->wait_dialog->set_init_status(false);
     this->wait_dialog->setText(out_str);
-
 }
 
 
 void MainWindow::on_general_page_out_clicked(QString path)
 {
-
     QString qt_out_path = path + ".qt";
     QFile file(qt_out_path);
     file.open(QIODevice::WriteOnly|QIODevice::Text);
@@ -228,9 +244,8 @@ void MainWindow::on_general_page_out_clicked(QString path)
     file.close();
 
     this->call_python(qt_out_path);
-
     this->std_out_path = qt_out_path + ".stdout";
-    this->wait_dialog->set_init_status(true);
+    this->on_readoutput();
     this->wait_dialog->setModal(true);
     this->wait_dialog->exec();
 }

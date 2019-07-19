@@ -10,6 +10,8 @@ GeneralPage::GeneralPage(QWidget *parent) :
     ui->setupUi(this);
 
     this->set_single_mode(true);
+    this->on_comboBox_multi_set_activated(0);
+
 }
 
 GeneralPage::~GeneralPage()
@@ -36,11 +38,12 @@ void GeneralPage::on_pushButton_load_clicked()
 void GeneralPage::on_pushButton_save_run_clicked()
 {
     QString path=QFileDialog::getSaveFileName(this,QStringLiteral("保存为"),"test.out",tr("Text Files(*.txt)"));
-
-    this->ui->lineEdit_out_file->setText(path);
-    this->ui->lineEdit_plot_file->setText(path);
-
-    this->call_main_run();
+    if(!path.isEmpty())
+    {
+        this->ui->lineEdit_out_file->setText(path);
+        this->ui->lineEdit_plot_file->setText(path);
+        this->call_main_run();
+    }
 }
 
 void GeneralPage::call_main_run()
@@ -115,12 +118,15 @@ void GeneralPage::on_comboBox_global_mode_currentIndexChanged(int index)
 
 void GeneralPage::set_single_mode(bool mark)
 {
-    this->ui->lineEdit_phi_end->setDisabled(mark);
-    this->ui->lineEdit_phi_step->setDisabled(mark);
-    this->ui->lineEdit_umu_end->setDisabled(mark);
-    this->ui->lineEdit_umu_step->setDisabled(mark);
-    this->ui->lineEdit_height_end->setDisabled(mark);
-    this->ui->lineEdit_height_step->setDisabled(mark);
+    if(mark)
+    {
+        this->ui->comboBox_multi_set->setCurrentIndex(0);
+        this->ui->comboBox_multi_set->setDisabled(true);
+    }
+    else
+    {
+        this->ui->comboBox_multi_set->setDisabled(false);
+    }
 }
 
 double GeneralPage::calculate_wave(double input)
@@ -147,7 +153,6 @@ void GeneralPage::on_lineEdit_wavecount_start_textEdited(const QString &arg1)
 
 void GeneralPage::on_lineEdit_wavelength_end_textEdited(const QString &arg1)
 {
-    qDebug() << arg1;
     double wavecount = this->calculate_wave(arg1.toDouble());
     this->ui->lineEdit_wavecount_end->setText(QString::number(wavecount,10,5));
 }
@@ -162,4 +167,85 @@ void GeneralPage::on_pushButton_source_file_clicked()
 {
     QString path=QFileDialog::getOpenFileName(this,QStringLiteral("载入"),"C:\\",tr("All Files (*);;Text Files (*.txt)"));
     this->ui->lineEdit_source_file->setText(path);
+}
+
+void GeneralPage::on_comboBox_multi_set_currentIndexChanged(const QString &arg1)
+{
+    qDebug() << arg1;
+    if(arg1 == "观测俯仰角")
+    {
+        this->ui->lineEdit_umu_start->setDisabled(false);
+        this->ui->lineEdit_umu_end->setDisabled(false);
+        this->ui->lineEdit_umu_step->setDisabled(false);
+
+        this->ui->lineEdit_phi_start->setDisabled(false);
+        this->ui->lineEdit_phi_end->setDisabled(true);
+        this->ui->lineEdit_phi_step->setDisabled(true);
+
+        this->ui->lineEdit_height_start->setDisabled(false);
+        this->ui->lineEdit_height_end->setDisabled(true);
+        this->ui->lineEdit_height_step->setDisabled(true);
+
+    }
+    else if(arg1 == "观测方位角")
+    {
+        this->ui->lineEdit_umu_start->setDisabled(false);
+        this->ui->lineEdit_umu_end->setDisabled(true);
+        this->ui->lineEdit_umu_step->setDisabled(true);
+
+        this->ui->lineEdit_phi_start->setDisabled(false);
+        this->ui->lineEdit_phi_end->setDisabled(false);
+        this->ui->lineEdit_phi_step->setDisabled(false);
+
+        this->ui->lineEdit_height_start->setDisabled(false);
+        this->ui->lineEdit_height_end->setDisabled(true);
+        this->ui->lineEdit_height_step->setDisabled(true);
+
+    }
+    else if(arg1 == "距离")
+    {
+        this->ui->lineEdit_umu_start->setDisabled(false);
+        this->ui->lineEdit_umu_end->setDisabled(true);
+        this->ui->lineEdit_umu_step->setDisabled(true);
+
+        this->ui->lineEdit_phi_start->setDisabled(false);
+        this->ui->lineEdit_phi_end->setDisabled(true);
+        this->ui->lineEdit_phi_step->setDisabled(true);
+
+        this->ui->lineEdit_height_start->setDisabled(false);
+        this->ui->lineEdit_height_end->setDisabled(false);
+        this->ui->lineEdit_height_step->setDisabled(false);
+
+    }
+    else
+    {
+        this->ui->lineEdit_umu_end->setDisabled(true);
+        this->ui->lineEdit_umu_step->setDisabled(true);
+
+        this->ui->lineEdit_phi_end->setDisabled(true);
+        this->ui->lineEdit_phi_step->setDisabled(true);
+
+        this->ui->lineEdit_height_end->setDisabled(true);
+        this->ui->lineEdit_height_step->setDisabled(true);
+    }
+}
+
+void GeneralPage::on_comboBox_global_mode_currentIndexChanged(const QString &arg1)
+{
+
+}
+
+void GeneralPage::on_comboBox_multi_set_activated(int index)
+{
+    if(index == 0)
+    {
+        this->ui->lineEdit_umu_end->setDisabled(true);
+        this->ui->lineEdit_umu_step->setDisabled(true);
+
+        this->ui->lineEdit_phi_end->setDisabled(true);
+        this->ui->lineEdit_phi_step->setDisabled(true);
+
+        this->ui->lineEdit_height_end->setDisabled(true);
+        this->ui->lineEdit_height_step->setDisabled(true);
+    }
 }

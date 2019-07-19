@@ -1,8 +1,0 @@
-atmosphere_file ../examples/AFGLMS50.DAT
-albedo 0.2
-sza 30.0
-rte_solver twostr
-pseudospherical
-mol_abs_param KATO
-quiet
-

@@ -1,2 +1,8 @@
 # radiometer-GUI
 GUI for radiometer
+
+注意：
+1、GUI是QT工程，主要包含cpp文件；
+
+2、GUI_RUN是qt运行的环境文件，包括python中间处理件和uvspec的运行环境，
+使用时将GUI_RUN下面的所有文件复制到QT工程生成的GUI.exe同级目录下即可。

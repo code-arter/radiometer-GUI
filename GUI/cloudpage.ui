@@ -36,7 +36,7 @@
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="2">
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="lineEdit_wc_file">
        <property name="option_name" stdset="0">
         <string>wc_file_path</string>
        </property>
@@ -265,7 +265,7 @@
       </widget>
      </item>
      <item row="8" column="1">
-      <widget class="QLineEdit" name="lineEdit_7">
+      <widget class="QLineEdit" name="lineEdit_cloud_fraction_file">
        <property name="option_name" stdset="0">
         <string>cloud_fraction_file</string>
        </property>
@@ -279,14 +279,14 @@
       </widget>
      </item>
      <item row="0" column="2">
-      <widget class="QLineEdit" name="lineEdit_5">
+      <widget class="QLineEdit" name="lineEdit_ic_file">
        <property name="option_name" stdset="0">
         <string>ic_file_path</string>
        </property>
       </widget>
      </item>
      <item row="7" column="1">
-      <widget class="QLineEdit" name="lineEdit_8">
+      <widget class="QLineEdit" name="lineEdit_ic_raytracing_file">
        <property name="option_name" stdset="0">
         <string>ic_raytracing_file</string>
        </property>

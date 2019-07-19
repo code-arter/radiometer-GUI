@@ -19,7 +19,7 @@
      <x>30</x>
      <y>440</y>
      <width>401</width>
-     <height>101</height>
+     <height>131</height>
     </rect>
    </property>
    <property name="title">
@@ -31,21 +31,35 @@
       <x>20</x>
       <y>20</y>
       <width>371</width>
-      <height>71</height>
+      <height>101</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_10">
-     <item row="0" column="2">
-      <widget class="QLineEdit" name="lineEdit_wavelength_end">
-       <property name="placeholderText">
-        <string>终止(um)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>wavelength_end</string>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_42">
+       <property name="text">
+        <string>波长范围</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="3">
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_43">
+       <property name="text">
+        <string>波数范围</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="lineEdit_wavecount_end">
+       <property name="placeholderText">
+        <string>终止(cm-1)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>wavecount_end</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
       <widget class="QLineEdit" name="lineEdit_wavelength_step">
        <property name="placeholderText">
         <string>步长(um)</string>
@@ -55,34 +69,7 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="lineEdit_wavelength_start">
-       <property name="placeholderText">
-        <string>起始(um)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>wavelength_start</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_42">
-       <property name="text">
-        <string>波长范围</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="3">
-      <widget class="QLineEdit" name="lineEdit_wavecount_step">
-       <property name="placeholderText">
-        <string>步长(cm-1)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>wavecount_step</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
+     <item row="2" column="1">
       <widget class="QLineEdit" name="lineEdit_wavecount_start">
        <property name="placeholderText">
         <string>起始(cm-1)</string>
@@ -95,21 +82,61 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_43">
-       <property name="text">
-        <string>波数范围</string>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_wavelength_start">
+       <property name="placeholderText">
+        <string>起始(um)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>wavelength_start</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLineEdit" name="lineEdit_wavecount_step">
+       <property name="placeholderText">
+        <string>步长(cm-1)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>wavecount_step</string>
        </property>
       </widget>
      </item>
      <item row="1" column="2">
-      <widget class="QLineEdit" name="lineEdit_wavecount_end">
+      <widget class="QLineEdit" name="lineEdit_wavelength_end">
        <property name="placeholderText">
-        <string>终止(cm-1)</string>
+        <string>终止(um)</string>
        </property>
        <property name="option_name" stdset="0">
-        <string>wavecount_end</string>
+        <string>wavelength_end</string>
        </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_28">
+       <property name="accessibleName">
+        <string/>
+       </property>
+       <property name="text">
+        <string>变化设置</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="comboBox_main_wave">
+       <property name="option_name" stdset="0">
+        <string>main_wave</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>设置波长</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>设置波数</string>
+        </property>
+       </item>
       </widget>
      </item>
     </layout>
@@ -441,7 +468,7 @@
      <x>450</x>
      <y>180</y>
      <width>411</width>
-     <height>361</height>
+     <height>391</height>
     </rect>
    </property>
    <property name="title">
@@ -453,65 +480,18 @@
       <x>20</x>
       <y>20</y>
       <width>381</width>
-      <height>131</height>
+      <height>161</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_7">
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_44">
-       <property name="text">
-        <string>观测俯仰角</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2">
-      <widget class="QLineEdit" name="lineEdit_phi_end">
-       <property name="placeholderText">
-        <string>终止(deg)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>azimuth_angle_end</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
+     <item row="4" column="0">
       <widget class="QLabel" name="label_45">
        <property name="text">
         <string>观测高度</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="3">
-      <widget class="QLineEdit" name="lineEdit_phi_step">
-       <property name="placeholderText">
-        <string>步长(deg)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>azimuth_angle_step</string>
-       </property>
-      </widget>
-     </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEdit_phi_start">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="placeholderText">
-        <string>起始(deg)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>azimuth_angle_start</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_46">
-       <property name="text">
-        <string>观测方位角</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
       <widget class="QLineEdit" name="lineEdit_umu_start">
        <property name="placeholderText">
         <string>起始(deg)</string>
@@ -521,17 +501,7 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="2">
-      <widget class="QLineEdit" name="lineEdit_umu_end">
-       <property name="placeholderText">
-        <string>终止(deg)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>angle_of_pitch_end</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="3">
+     <item row="2" column="3">
       <widget class="QLineEdit" name="lineEdit_umu_step">
        <property name="placeholderText">
         <string>步长(deg)</string>
@@ -541,36 +511,20 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="lineEdit_height_start">
-       <property name="placeholderText">
-        <string>起始(km)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>distance_start</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="2">
-      <widget class="QLineEdit" name="lineEdit_height_end">
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_46">
        <property name="text">
-        <string/>
-       </property>
-       <property name="placeholderText">
-        <string>终止(km)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>distance_end</string>
+        <string>观测方位角</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="3">
-      <widget class="QLineEdit" name="lineEdit_height_step">
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="lineEdit_umu_end">
        <property name="placeholderText">
-        <string>步长(km)</string>
+        <string>终止(deg)</string>
        </property>
        <property name="option_name" stdset="0">
-        <string>distance_step</string>
+        <string>angle_of_pitch_end</string>
        </property>
       </widget>
      </item>
@@ -591,6 +545,46 @@
        </property>
       </widget>
      </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="lineEdit_height_start">
+       <property name="placeholderText">
+        <string>起始(km)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>distance_start</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QLineEdit" name="lineEdit_height_end">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>终止(km)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>distance_end</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_44">
+       <property name="text">
+        <string>观测俯仰角</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QLineEdit" name="lineEdit_phi_step">
+       <property name="placeholderText">
+        <string>步长(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>azimuth_angle_step</string>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="2">
       <widget class="QLineEdit" name="lineEdit_weidu">
        <property name="placeholderText">
@@ -601,13 +595,83 @@
        </property>
       </widget>
      </item>
+     <item row="3" column="2">
+      <widget class="QLineEdit" name="lineEdit_phi_end">
+       <property name="placeholderText">
+        <string>终止(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>azimuth_angle_end</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEdit_phi_start">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>起始(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>azimuth_angle_start</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="3">
+      <widget class="QLineEdit" name="lineEdit_height_step">
+       <property name="placeholderText">
+        <string>步长(km)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>distance_step</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_22">
+       <property name="accessibleName">
+        <string/>
+       </property>
+       <property name="text">
+        <string>批处理设置</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="comboBox_multi_set">
+       <property name="option_name" stdset="0">
+        <string>multi_choice</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>观测俯仰角</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>观测方位角</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>距离</string>
+        </property>
+       </item>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="gridLayoutWidget_8">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>160</y>
+      <y>190</y>
       <width>381</width>
       <height>191</height>
      </rect>
@@ -705,7 +769,7 @@
         <string>(km)</string>
        </property>
        <property name="option_name" stdset="0">
-        <string>zout</string>
+        <string>zout_sea</string>
        </property>
       </widget>
      </item>
@@ -973,6 +1037,9 @@
      </item>
      <item row="0" column="1">
       <widget class="QLineEdit" name="lineEdit_source_file">
+       <property name="placeholderText">
+        <string>文件路径</string>
+       </property>
        <property name="option_name" stdset="0">
         <string>source_file</string>
        </property>

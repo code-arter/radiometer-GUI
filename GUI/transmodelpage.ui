@@ -17,19 +17,19 @@
    <property name="geometry">
     <rect>
      <x>290</x>
-     <y>40</y>
+     <y>20</y>
      <width>291</width>
      <height>201</height>
     </rect>
    </property>
    <property name="title">
-    <string/>
+    <string>基本设置</string>
    </property>
    <widget class="QWidget" name="formLayoutWidget">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>20</y>
+      <y>30</y>
       <width>231</width>
       <height>92</height>
      </rect>
