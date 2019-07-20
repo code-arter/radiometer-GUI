@@ -43,6 +43,8 @@ MainWindow::MainWindow(QString python_path, QString scripts_path, QWidget *paren
     connect(this->general_page, SIGNAL(GeneralSaveOutEvent(QString)),this,SLOT(on_general_page_out_clicked(QString)));
     connect(this->general_page, SIGNAL(GeneralSavePlotEvent(QString)),this,SLOT(on_general_page_plot_clicked(QString)));
 
+    //connect(this->plot_dialog, SIGNAL(GeneralPlotEvent(QString)),this,SLOT(on_general_page_plot_clicked(QString)));
+
 }
 
 MainWindow::~MainWindow()
@@ -55,6 +57,7 @@ MainWindow::~MainWindow()
     delete cloud_page;
     delete trans_mode_page;
         delete ui;
+    this->close_python();
 }
 
 void MainWindow::init_widget_list()
@@ -196,6 +199,7 @@ int MainWindow::init_python(QString out_path)
     QString python_home = fileinfo.path();
     const char *p = python_home.toStdString().c_str();
     char *tmp=const_cast<char*>(p);
+    qDebug() << tmp;
     Py_SetPythonHome(tmp);
 
     Py_Initialize();
@@ -283,18 +287,9 @@ void MainWindow::on_general_page_plot_clicked(QString path)
 {
     QVector<QString> line_list;
     this->read_conf(path, line_list);
-    qDebug() << line_list.size();
     if(line_list.size() == 1 && !line_list[0].contains(" "))
     {
-        QVector<QString> key_list;
-        this->read_conf(line_list[0] + "/key_path", key_list);
-        qDebug()<< line_list[0] << key_list.size();
-        QStringList phi = key_list[0].split(",");
-        QStringList umu = key_list[1].split(",");
-        QStringList distance = key_list[2].split(",");
-        qDebug() << phi << umu << distance;
-
-        this->plot_dialog->set_init(phi, umu, distance);
+        this->plot_dialog->set_init(line_list[0]);
         this->plot_dialog->show();
     }
     else

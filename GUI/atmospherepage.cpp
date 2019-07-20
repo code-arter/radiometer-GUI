@@ -54,3 +54,9 @@ void AtmosPherePage::on_add_page_modify_clicked(QString val)
 
 }
 
+
+void AtmosPherePage::on_pushButton_4_clicked()
+{
+    QString path=QFileDialog::getOpenFileName(this,QStringLiteral("载入"),"C:\\",tr("All Files (*);;Text Files (*.txt)"));
+    this->ui->lineEdit_atmos_define->setText(path);
+}

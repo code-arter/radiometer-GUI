@@ -596,6 +596,17 @@ def form_conf_dict(old_umu_value, old_distance_value, umu_value, phi_value, dist
             if output_type == 0:
                 pass
             elif output_type == 1:
+                type_data_1 = copy.deepcopy(type_data)
+                type_data_1.extend([atmos_file, "umu %s" % umu, "output_quantity transmittance"])
+                key = "%s_%s_%s_%s" % (umu_key, distance_key, "transmittance", "spectral")
+                res_dict[key] = type_data_1
+
+                type_data_2 = copy.deepcopy(type_data)
+                type_data_2.extend([atmos_file, "umu %s" % umu, "output_process integrate"])
+                key = "%s_%s_%s_%s" % (umu_key, distance_key, "radiance", "integrate")
+                res_dict[key] = type_data_2
+
+
                 type_data.extend([atmos_file, "umu %s" % umu,  "output_quantity transmittance", "output_process integrate"])
                 key = "%s_%s_%s_%s" % (umu_key, distance_key, "transmittance", "integrate")
                 res_dict[key] = type_data
