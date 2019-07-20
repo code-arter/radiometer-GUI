@@ -18,6 +18,9 @@ MainWindow::MainWindow(QString python_path, QString scripts_path, QWidget *paren
     cloud_page = new CloudPage(this);
     //excel_page = new ExcelForm(this);
     trans_mode_page = new TransModelPage(this);
+    plot_dialog = new PlotDialog(this);
+    plot_dialog->setWindowTitle("绘图设置");
+    plot_dialog->hide();
 
     this->wait_dialog = new WaitDialog(this);
     this->wait_dialog->hide();
@@ -250,9 +253,64 @@ void MainWindow::on_general_page_out_clicked(QString path)
     this->wait_dialog->exec();
 }
 
+int MainWindow::make_points(QVector<QString> &line_list, QList<QPointF> &data_list, double &x_min, double &x_max, double &y_min, double &y_max)
+{
+    x_min = 99999999999;
+    x_max = 0.0;
+    y_min = 99999999999;
+    y_max = 0.0;
+    for(int index = 0; index < line_list.size(); index++)
+    {
+        QStringList sl =line_list[index].split(" ", QString::SkipEmptyParts);
+        if(sl.size() == 0)
+            continue;
+        double x = sl.at(0).toDouble();
+        double y = sl.at(1).toDouble();
+        if(x < x_min)
+            x_min = x;
+        if(x > x_max)
+            x_max = x;
+        if(y < y_min)
+            y_min = y;
+        if(y > y_max)
+            y_max = y;
+        data_list.append(QPointF(x, y));
+    }
+    return 0;
+}
+
 void MainWindow::on_general_page_plot_clicked(QString path)
 {
-    qDebug() << path;
+    QVector<QString> line_list;
+    this->read_conf(path, line_list);
+    qDebug() << line_list.size();
+    if(line_list.size() == 1 && !line_list[0].contains(" "))
+    {
+        QVector<QString> key_list;
+        this->read_conf(line_list[0] + "/key_path", key_list);
+        qDebug()<< line_list[0] << key_list.size();
+        QStringList phi = key_list[0].split(",");
+        QStringList umu = key_list[1].split(",");
+        QStringList distance = key_list[2].split(",");
+        qDebug() << phi << umu << distance;
+
+        this->plot_dialog->set_init(phi, umu, distance);
+        this->plot_dialog->show();
+    }
+    else
+    {
+        QList<QPointF> m_data;
+        double x_min, x_max,  y_min, y_max;
+        this->make_points(line_list, m_data, x_min, x_max, y_min, y_max);
+
+        QLineSeries *test_line = new QLineSeries();
+        test_line->append(m_data);
+        QChart * test = createSpectrumChart(-1, -1, test_line, x_min, x_max, y_min, y_max);
+        QChartView *chartView = new QChartView(test);
+        chartView->resize(600, 400);
+        chartView->setWindowTitle("画图");
+        chartView->show();
+    }
 }
 
 void MainWindow::on_tabWidget_currentChanged(int index)

@@ -1,0 +1,3 @@
+Now Start!!!
+2019-07-20 20:47:21,168 - root - INFO - {'distance': ['distance 0 0 1'], 'direction': [u'direction \u89c2\u6d4b\u5730\u7403\u65b9\u5411'], 'angle_of_pitch': ['angle_of_pitch 7 10 1'], 'day_of_year': [u'day_of_year 147'], 'azimuth_angle': ['azimuth_angle 180 180 1']}
+2019-07-20 20:47:21,170 - root - INFO - ['phi 180.0']

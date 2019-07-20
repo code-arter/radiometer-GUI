@@ -1,18 +1,20 @@
+angle_of_pitch_end 10
 angle_of_pitch_start 7
+angle_of_pitch_step 1
 azimuth_angle_start 180
 conf_file_path C:/Users/zhangye/Desktop/test.conf.txt
 day_of_year 147
 direction 观测地球方向
 distance_start 0
 gas_file us-standard
-global_mode 单点模式
+global_mode 批处理模式
 latitude_file us-standard
 main_wave 设置波长
-out_file_path C:/Users/zhangye/Desktop/test.out
+multi_choice 观测俯仰角
+out_file_path C:/Users/zhangye/Desktop/1.OUT
 output_process per_cm-1
-output_user lambda uu
 phi0 124
-plot_file_path C:/Users/zhangye/Desktop/test.out
+plot_file_path C:/Users/zhangye/Desktop/1.OUT
 pressure_file us-standard
 sur_temperature 290
 sza 7

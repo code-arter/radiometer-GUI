@@ -12,6 +12,8 @@
 #include "waitdialog.h"
 #include "math.h"
 #include <Python.h>
+#include "plotcurve.h"
+#include "plotdialog.h"
 
 
 namespace Ui {
@@ -37,6 +39,8 @@ public:
 
     QString read_all(QString path);
 
+    int make_points(QVector<QString> &line_list, QList<QPointF> &data_list, double &x_min, double &x_max, double &y_min, double &y_max);
+
 
     int call_python(QString out_path);
     int init_python(QString out_path);
@@ -60,6 +64,8 @@ private:
     TransModelPage *trans_mode_page;
     InputConfShow *input_conf_page;
 
+    PlotDialog *plot_dialog;
+
     WaitDialog *wait_dialog;
 
     QString python_path;
@@ -81,6 +87,8 @@ private:
     PyObject* pFunhello;
 
     Ui::MainWindow *ui;
+
+
 
 signals:
     void GeneralSaveConfEvent(QString path);

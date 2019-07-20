@@ -40,7 +40,7 @@ output_format
 phi0
 aerosol_species_library
 source_type
-zout
+zout_sea
 wc_file
 output_process
 ic_modify

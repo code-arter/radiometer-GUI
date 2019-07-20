@@ -2,11 +2,11 @@
 
 umu 0.992546151641
 phi 180
+output_user wavenumber uu
 altitude 0
 sza 7
 day_of_year 147
-wavelength_grid_file wavelength_grid\wave_grid_file-1563616429.44
-source thermal
+wavelength_grid_file wavelength_grid\wave_grid_file-1563632269.73
 sur_temperature 290
 phi0 124
 output_process per_cm-1

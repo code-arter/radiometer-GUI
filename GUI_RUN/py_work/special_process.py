@@ -132,7 +132,6 @@ def process_special_general_dict(general_dict):
     if not multi_choice:
         return ""
     select_choice = multi_choice[0].split(" ")[1]
-    print "choice", select_choice
 
     if select_choice == u"观测方位角":
         umu_val = general_dict["angle_of_pitch"][0].split(" ")[1]
@@ -150,7 +149,6 @@ def process_special_general_dict(general_dict):
         general_dict["azimuth_angle"] = ["azimuth_angle %s %s 1" % (phi_val, phi_val)]
         general_dict["angle_of_pitch"] = ["angle_of_pitch %s %s 1" % (umu_val, umu_val)]
     general_dict.pop("multi_choice")
-    print general_dict
 
 def process_zout_and_altitude(general_dict):
     if "zout" not in general_dict:
@@ -168,7 +166,6 @@ def process_zout_and_altitude(general_dict):
     general_dict["zout"] = ["zout %s" % str(zout)]
 
 def getQtInputDict(data_dict):
-    print data_dict
 
     general_options = ["global_mode", "direction", "main_wave", "main_wave",
                        "general_location", "sight_height", "multi_choice", "angle_of_pitch", "azimuth_angle", "distance", "day_of_year"]

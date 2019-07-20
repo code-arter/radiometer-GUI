@@ -62,7 +62,7 @@ void GeneralPage::call_main_save_conf()
 
 void GeneralPage::on_pushButton_conf_save_clicked()
 {
-    QString path=QFileDialog::getSaveFileName(this,QStringLiteral("另存为"),"test.conf",tr("Text Files(*.txt)"));
+    QString path=QFileDialog::getSaveFileName(this,QStringLiteral("另存为"),"test.conf");
     if(!path.isEmpty())
     {
         this->ui->lineEdit_conf_file->setText(path);
@@ -73,23 +73,23 @@ void GeneralPage::on_pushButton_conf_save_clicked()
 
 void GeneralPage::on_pushButton_open_plot_clicked()
 {
-    QString path;
-    if(this-ui->lineEdit_plot_file->text().isEmpty())
+    QString path=QFileDialog::getOpenFileName(this,QStringLiteral("载入"),"C:\\");
+    if(!path.isEmpty())
     {
-        path=QFileDialog::getSaveFileName(this,QStringLiteral("保存为"),"test.plot",tr("Text Files(*.txt)"));
-    }
-    else {
-        path = this->ui->lineEdit_plot_file->text();
-    }
-    this->ui->lineEdit_plot_file->setText(path);
+        this->ui->lineEdit_plot_file->setText(path);
 
-    emit GeneralSaveOutEvent(path);
+        emit GeneralSavePlotEvent(path);
+    }
 
 }
 
 void GeneralPage::on_pushButton_plot_clicked()
 {
-    this->on_pushButton_open_plot_clicked();
+    QString path = this->ui->lineEdit_plot_file->text();
+    if(!path.isEmpty())
+    {
+        emit GeneralSavePlotEvent(path);
+    }
 }
 
 void GeneralPage::on_pushButton_conf_load_clicked()

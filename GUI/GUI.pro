@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT += charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -22,6 +23,7 @@ SOURCES += main.cpp\
     atmospherepage.cpp \
     commonfunction.cpp \
     plotcurve.cpp \
+    plotdialog.cpp \
     transmodelpage.cpp \
     waitdialog.cpp
 
@@ -34,6 +36,7 @@ HEADERS  += mainwindow.h \
     commonfunction.h \
     inputconfshow.h \
     plotcurve.h \
+    plotdialog.h \
     transmodelpage.h \
     waitdialog.h
 
@@ -44,6 +47,7 @@ FORMS    += mainwindow.ui \
     generalpage.ui \
     atmospherepage.ui \
     inputconfshow.ui \
+    plotdialog.ui \
     transmodelpage.ui \
     waitdialog.ui
 

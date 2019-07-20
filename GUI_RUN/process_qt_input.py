@@ -3,6 +3,7 @@
 
 import os
 import sys
+import traceback
 #sys.path.append("py_work")
 import logging
 
@@ -148,27 +149,31 @@ def process_qt_input(filepath, conf_path):
     return is_success, out_path, response
 
 def run(in_path, script_path):
-    log_path = "%s.stdout" % in_path
-    with open(log_path, "w") as fp:
-        fp.write("Now Start!!!\n")
+    try:
+        log_path = "%s.stdout" % in_path
+        with open(log_path, "w") as fp:
+            fp.write("Now Start!!!\n")
 
-    conf_path = os.path.join(os.path.dirname(script_path), "qt_conf", "conf_temp.txt")
+        conf_path = os.path.join(os.path.dirname(script_path), "qt_conf", "conf_temp.txt")
 
-    is_success, out_path, out_dict = process_qt_input(in_path, conf_path)
-    if not is_success:
-        return 201, u"预处理Qt文件失败！"
-    dirname = os.path.join(os.path.dirname(script_path), "py_work")
-    #sys.path.append("py_work")
+        is_success, out_path, out_dict = process_qt_input(in_path, conf_path)
+        if not is_success:
+            return 201, u"预处理Qt文件失败！"
+        dirname = os.path.join(os.path.dirname(script_path), "py_work")
+        #sys.path.append("py_work")
 
-    os.chdir(dirname)
-    from py_work.uvspec_run import OnRun
-    #import py_work.uvspec_run
-    is_success, data_list = OnRun(out_dict, out_path, log_path)
-    #is_success = True
-    if not is_success:
-        return 202, u"运行失败！"
+        os.chdir(dirname)
+        from py_work.uvspec_run import OnRun
+        #import py_work.uvspec_run
+        is_success, data_list = OnRun(out_dict, out_path, log_path)
+        #is_success = True
+        if not is_success:
+            return 202, u"运行失败！"
 
-    return 200, u"运行成功"
+        return 200, u"运行成功"
+    except Exception as e:
+        logging.error(traceback.format_exc())
+
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-/*
+
 //创建光谱曲线表格 -->  更新数据
 
 //创建表格
@@ -7,17 +7,17 @@
 QChart * createSpectrumChart(int xlabel_code,int ylabel_code,QLineSeries * m_series_Spectrum,float min_x,float max_x,float min_y,float max_y)
 {
    
-        Qstring Yl_Rad_spec_waveLen="光谱辐射亮度(w/m^2·Sr·nm)";
-        Qstring Yl_Rad_spec_waveNum="光谱辐射亮度(w/m^2·Sr·cm-1)";
-        Qstring Yl_Rad_inte="积分辐射亮度(w/m^2·Sr)";
-        Qstring Yl_BT="辐射亮温(Kevin)";
-        Qstring Yl_Transmit="透过率";
+        QString Yl_Rad_spec_waveLen="光谱辐射亮度(w/m^2·Sr·nm)";
+        QString Yl_Rad_spec_waveNum="光谱辐射亮度(w/m^2·Sr·cm-1)";
+        QString Yl_Rad_inte="积分辐射亮度(w/m^2·Sr)";
+        QString Yl_BT="辐射亮温(Kevin)";
+        QString Yl_Transmit="透过率";
 	
-        Qstring Xl_Pitch_Angle="俯仰角(DEG)";
-        Qstring Xl_Amuze_Angle="方位角(DEG)";
-        Qstring Xl_Ailtude="海拔高度(Km)";
-        Qstring Xl_spec_waveLen="波长(μm)";
-        Qstring Xl_spec_waveNum="波数(cm-1)";
+        QString Xl_Pitch_Angle="俯仰角(DEG)";
+        QString Xl_Amuze_Angle="方位角(DEG)";
+        QString Xl_Ailtude="海拔高度(Km)";
+        QString Xl_spec_waveLen="波长(μm)";
+        QString Xl_spec_waveNum="波数(cm-1)";
 	
 	
 	min_x=min_x*0.95;
@@ -104,7 +104,7 @@ QChart * createSpectrumChart(int xlabel_code,int ylabel_code,QLineSeries * m_ser
 	//addAxis函数的第二个参数是设置坐标轴的位置，
 	//只有四个选项，下方：Qt::AlignBottom，左边：Qt::AlignLeft，右边：Qt::AlignRight，上方：Qt::AlignTop
 	chart->addAxis(axisX, Qt::AlignBottom);
-        chart->adAxis(axisY, Qt::AlignLeft);
+        chart->addAxis(axisY, Qt::AlignLeft);
  
 	//将点变成线
 	m_series_Spectrum->attachAxis(axisX);
@@ -112,7 +112,7 @@ QChart * createSpectrumChart(int xlabel_code,int ylabel_code,QLineSeries * m_ser
 
 	return chart;
 }
-*/
+
 
 
 
