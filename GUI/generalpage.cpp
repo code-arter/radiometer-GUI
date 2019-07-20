@@ -37,7 +37,7 @@ void GeneralPage::on_pushButton_load_clicked()
 
 void GeneralPage::on_pushButton_save_run_clicked()
 {
-    QString path=QFileDialog::getSaveFileName(this,QStringLiteral("保存为"),"test.out",tr("Text Files(*.txt)"));
+    QString path=QFileDialog::getSaveFileName(this,QStringLiteral("保存为"),"test.out");
     if(!path.isEmpty())
     {
         this->ui->lineEdit_out_file->setText(path);

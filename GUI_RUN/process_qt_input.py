@@ -45,7 +45,7 @@ class QtConfManager(object):
         for line_data in data_list:
             if(line_data.startswith('#')) or not line_data:
                 continue
-            input_key, input_val = line_data.split(' ')
+            input_key, input_val = line_data.split(' ', 1)
             if(input_key == "out_file_path"):
                 self.out_file_path = input_val
             else:
@@ -81,7 +81,22 @@ class QtConfManager(object):
 
         self.process_distance(qt_dict, out_dict)
 
+        self.process_multi_val(qt_dict, out_dict)
+
         return True, self.out_file_path, out_dict
+
+    def process_multi_val(self, qt_dict, out_dict):
+        multi_setting = ["mixing_ratio", "mol_modify",
+                         "aerosol_file", "aerosol_modify",
+                         "wc_set", "wc_modify", "ic_set", "ic_modify", "ic_fu", "cloudcover"]
+        for setting in multi_setting:
+            if setting not in qt_dict:
+                continue
+            new_list = []
+            for val in qt_dict[setting].split("; "):
+                new_val = "%s %s" % (setting, val)
+                new_list.append(new_val)
+            out_dict[setting] = new_list
 
     def process_angle_of_pitch(self, qt_dict, out_dict):
         key = "angle_of_pitch"

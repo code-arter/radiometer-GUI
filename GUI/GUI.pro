@@ -21,6 +21,7 @@ SOURCES += main.cpp\
     generalpage.cpp \
     atmospherepage.cpp \
     commonfunction.cpp \
+    plotcurve.cpp \
     transmodelpage.cpp \
     waitdialog.cpp
 
@@ -32,6 +33,7 @@ HEADERS  += mainwindow.h \
     atmospherepage.h \
     commonfunction.h \
     inputconfshow.h \
+    plotcurve.h \
     transmodelpage.h \
     waitdialog.h
 
@@ -51,7 +53,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 INCLUDEPATH +=D:\work_software\language\include
 LIBS += -LD:\work_software\language\libs\ -lpython27
 
-DISTFILES +=
+DISTFILES += \
+    process_qt_input.py
 CONFIG += c++11
 
 RESOURCES += \

@@ -13,10 +13,14 @@ class AtmosAddDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit AtmosAddDialog(QWidget *parent = nullptr);
+    explicit AtmosAddDialog(QString main_key,  QStringList header_list, QWidget *parent = nullptr);
     ~AtmosAddDialog();
 
     QString get_output_str();
+    QString get_val();
+
+    void init_tab_widget(QStringList col_header, int row_count=5);
+
 
 
 private slots:
@@ -27,6 +31,9 @@ private slots:
 private:
     Ui::AtmosAddDialog *ui;
     QString output_str;
+
+signals:
+    void AddDialogSaveEvent(QString val);
 
 };
 

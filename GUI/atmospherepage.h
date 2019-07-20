@@ -18,7 +18,7 @@ public:
     ~AtmosPherePage();
 
     AtmosAddDialog *atmos_add_mix_dialog;
-    AtmosAddDialog *atmos_add_pressure_dialog;
+    AtmosAddDialog *atmos_add_modify_dialog;
 
 private slots:
     void on_pushButton_clicked();
@@ -26,6 +26,11 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
+
+    void on_add_page_mix_clicked(QString val);
+    void on_add_page_modify_clicked(QString val);
+
+
 
 private:
     Ui::AtmosPherePage *ui;

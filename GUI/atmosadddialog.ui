@@ -32,53 +32,12 @@
   <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>10</y>
-     <width>621</width>
-     <height>201</height>
+     <x>90</x>
+     <y>20</y>
+     <width>541</width>
+     <height>192</height>
     </rect>
    </property>
-   <attribute name="horizontalHeaderDefaultSectionSize">
-    <number>300</number>
-   </attribute>
-   <attribute name="verticalHeaderMinimumSectionSize">
-    <number>33</number>
-   </attribute>
-   <row>
-    <property name="text">
-     <string>1</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>2</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>3</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>4</string>
-    </property>
-   </row>
-   <row>
-    <property name="text">
-     <string>5</string>
-    </property>
-   </row>
-   <column>
-    <property name="text">
-     <string>类型(o2/h2o/co2/no2/ch4/n2o/f11/f12/f22)</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>值</string>
-    </property>
-   </column>
   </widget>
  </widget>
  <resources/>

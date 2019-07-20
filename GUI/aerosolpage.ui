@@ -13,464 +13,476 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_2">
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,8,1">
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+  <widget class="QGroupBox" name="groupBox_7">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>10</y>
+     <width>671</width>
+     <height>501</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>基本设置</string>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>30</y>
+      <width>501</width>
+      <height>233</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout" columnstretch="0,1,2,1">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="horizontalSpacing">
+      <number>0</number>
+     </property>
+     <item row="8" column="2">
+      <widget class="QComboBox" name="comboBox_30">
+       <property name="option_name" stdset="0">
+        <string>aerosol_vulcan</string>
        </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="groupBox_7">
-       <property name="title">
-        <string>基本设置</string>
-       </property>
-       <widget class="QWidget" name="gridLayoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>120</x>
-          <y>19</y>
-          <width>371</width>
-          <height>271</height>
-         </rect>
+       <item>
+        <property name="text">
+         <string>off</string>
         </property>
-        <layout class="QGridLayout" name="gridLayout" columnstretch="3,7">
-         <item row="6" column="1">
-          <widget class="QComboBox" name="comboBox_25">
-           <property name="option_name" stdset="0">
-            <string>aerosol_haze</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>off</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>rural-type-aerosols</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>maritime-type-aerosols</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>urban-type-aerosols</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>tropospheric-type-aerosols</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="8" column="1">
-          <widget class="QComboBox" name="comboBox_30">
-           <property name="option_name" stdset="0">
-            <string>aerosol_vulcan</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>off</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>background-aerosols</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>moderate-vulcanic-aerosols</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>high-vulcanic-aerosols</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>extreme-vulcanic-aerosols</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="10" column="0">
-          <widget class="QLabel" name="label_31">
-           <property name="text">
-            <string>modran(6km廓线)</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_57">
-           <property name="text">
-            <string>指定库</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QComboBox" name="comboBox_26">
-           <property name="option_name" stdset="0">
-            <string>aerosol_species_file</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>off</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>continental_clean</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>continental_average</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>continental_polluted</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>urban</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>maritime_clean</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>maritime_polluted</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>maritime_tropical</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>desert</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>antarctic</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_58">
-           <property name="text">
-            <string>指定文件</string>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="1">
-          <widget class="QComboBox" name="comboBox_31">
-           <property name="option_name" stdset="0">
-            <string>aerosol_profile_modtran</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>off</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>activate</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="9" column="0">
-          <widget class="QLabel" name="label_64">
-           <property name="text">
-            <string>能见度</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_28">
-           <property name="text">
-            <string>默认参数</string>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="1">
-          <widget class="QLineEdit" name="lineEdit_4">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="placeholderText">
-            <string>值</string>
-           </property>
-           <property name="option_name" stdset="0">
-            <string>aerosol_visibility</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="0">
-          <widget class="QLabel" name="label_60">
-           <property name="text">
-            <string>季节</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QComboBox" name="comboBox_24">
-           <property name="option_name" stdset="0">
-            <string>aerosol_species_library</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>off</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>opac</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="8" column="0">
-          <widget class="QLabel" name="label_30">
-           <property name="text">
-            <string>火山灰</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_59">
-           <property name="text">
-            <string>类型(低于2公里)</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QComboBox" name="comboBox_22">
-           <property name="option_name" stdset="0">
-            <string>aerosol_default</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>off</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>activate</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="7" column="1">
-          <widget class="QComboBox" name="comboBox_27">
-           <property name="option_name" stdset="0">
-            <string>aerosol_season</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>off</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>spring-summer-profile</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>fall-winter-profile</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QPushButton" name="pushButton_9">
-           <property name="text">
-            <string>设置多行</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_65">
-           <property name="text">
-            <string>文件设置</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="gridLayoutWidget_2">
-        <property name="geometry">
-         <rect>
-          <x>120</x>
-          <y>310</y>
-          <width>501</width>
-          <height>152</height>
-         </rect>
+       </item>
+       <item>
+        <property name="text">
+         <string>background-aerosols</string>
         </property>
-        <layout class="QGridLayout" name="gridLayout_2">
-         <item row="4" column="1">
-          <widget class="QLineEdit" name="lineEdit_11">
-           <property name="placeholderText">
-            <string>值</string>
-           </property>
-           <property name="option_name" stdset="0">
-            <string>aerosol_set_tau_at_wvl_thick</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_62">
-           <property name="text">
-            <string>光学厚度(King)</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QLineEdit" name="lineEdit_7">
-           <property name="placeholderText">
-            <string>alpha_0</string>
-           </property>
-           <property name="option_name" stdset="0">
-            <string>aerosol_king_byrne_alpha_0</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLineEdit" name="lineEdit_6">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="placeholderText">
-            <string>alpha</string>
-           </property>
-           <property name="option_name" stdset="0">
-            <string>aerosol_angstrom_alpha</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QLineEdit" name="lineEdit_8">
-           <property name="placeholderText">
-            <string>值</string>
-           </property>
-           <property name="option_name" stdset="0">
-            <string>aerosol_set_tau_at_wvl_wave</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_33">
-           <property name="text">
-            <string>光学厚度</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <widget class="QLineEdit" name="lineEdit_2">
-           <property name="placeholderText">
-            <string>alpha_1</string>
-           </property>
-           <property name="option_name" stdset="0">
-            <string>aerosol_king_byrne_alpha_1</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2">
-          <widget class="QLineEdit" name="lineEdit">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="placeholderText">
-            <string>beta</string>
-           </property>
-           <property name="option_name" stdset="0">
-            <string>aerosol_angstrom_beta</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_29">
-           <property name="text">
-            <string>光学厚度(Angstrom)</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_66">
-           <property name="text">
-            <string>参数设置</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_32">
-           <property name="text">
-            <string>光学波长</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="3">
-          <widget class="QLineEdit" name="lineEdit_10">
-           <property name="placeholderText">
-            <string>alpha_2</string>
-           </property>
-           <property name="option_name" stdset="0">
-            <string>aerosol_king_byrne_alpha_2</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QPushButton" name="pushButton_10">
-           <property name="text">
-            <string>设置多行</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+       </item>
+       <item>
+        <property name="text">
+         <string>moderate-vulcanic-aerosols</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>high-vulcanic-aerosols</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>extreme-vulcanic-aerosols</string>
+        </property>
+       </item>
       </widget>
      </item>
-     <item>
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+     <item row="9" column="2">
+      <widget class="QLineEdit" name="lineEdit_4">
+       <property name="text">
+        <string/>
        </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
+       <property name="placeholderText">
+        <string>值</string>
        </property>
-      </spacer>
+       <property name="option_name" stdset="0">
+        <string>aerosol_visibility</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="pushButton_9">
+       <property name="text">
+        <string>设置多行</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QComboBox" name="comboBox_26">
+       <property name="option_name" stdset="0">
+        <string>aerosol_species_file</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>continental_clean</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>continental_average</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>continental_polluted</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>urban</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>maritime_clean</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>maritime_polluted</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>maritime_tropical</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>desert</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>antarctic</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QComboBox" name="comboBox_22">
+       <property name="option_name" stdset="0">
+        <string>aerosol_default</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>activate</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="10" column="2">
+      <widget class="QComboBox" name="comboBox_31">
+       <property name="option_name" stdset="0">
+        <string>aerosol_profile_modtran</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>activate</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="7" column="2">
+      <widget class="QComboBox" name="comboBox_27">
+       <property name="option_name" stdset="0">
+        <string>aerosol_season</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>spring-summer-profile</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>fall-winter-profile</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="6" column="2">
+      <widget class="QComboBox" name="comboBox_25">
+       <property name="option_name" stdset="0">
+        <string>aerosol_haze</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>rural-type-aerosols</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>maritime-type-aerosols</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>urban-type-aerosols</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>tropospheric-type-aerosols</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QComboBox" name="comboBox_24">
+       <property name="option_name" stdset="0">
+        <string>aerosol_species_library</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>opac</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLineEdit" name="lineEdit_aerosol_file">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>值</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>aerosol_file</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_28">
+       <property name="text">
+        <string>默认参数</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="label_65">
+       <property name="text">
+        <string>文件设置</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLabel" name="label_57">
+       <property name="text">
+        <string>指定库</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLabel" name="label_58">
+       <property name="text">
+        <string>指定文件</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLabel" name="label_59">
+       <property name="text">
+        <string>类型(低于2公里)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLabel" name="label_60">
+       <property name="text">
+        <string>季节</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLabel" name="label_30">
+       <property name="text">
+        <string>火山灰</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QLabel" name="label_64">
+       <property name="text">
+        <string>能见度</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="QLabel" name="label_31">
+       <property name="text">
+        <string>modran(6km廓线)</string>
+       </property>
+      </widget>
      </item>
     </layout>
-   </item>
-  </layout>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>290</y>
+      <width>501</width>
+      <height>152</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_2" columnstretch="1,1,1,1">
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="lineEdit_11">
+       <property name="placeholderText">
+        <string>值</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>aerosol_set_tau_at_wvl_thick</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_62">
+       <property name="text">
+        <string>光学厚度(King)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_7">
+       <property name="placeholderText">
+        <string>alpha_0</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>aerosol_king_byrne_alpha_0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEdit_6">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>alpha</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>aerosol_angstrom_alpha</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEdit_8">
+       <property name="placeholderText">
+        <string>值</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>aerosol_set_tau_at_wvl_wave</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_33">
+       <property name="text">
+        <string>光学厚度</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLineEdit" name="lineEdit_2">
+       <property name="placeholderText">
+        <string>alpha_1</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>aerosol_king_byrne_alpha_1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>beta</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>aerosol_angstrom_beta</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_29">
+       <property name="text">
+        <string>光学厚度(Angstrom)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_66">
+       <property name="text">
+        <string>参数设置</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_32">
+       <property name="text">
+        <string>光学波长</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLineEdit" name="lineEdit_10">
+       <property name="placeholderText">
+        <string>alpha_2</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>aerosol_king_byrne_alpha_2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="pushButton_10">
+       <property name="text">
+        <string>设置多行</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEdit_aerosol_modify">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="placeholderText">
+        <string>值</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>aerosol_modify</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
  </widget>
  <resources/>
  <connections/>

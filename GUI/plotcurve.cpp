@@ -1,3 +1,4 @@
+/*
 //创建光谱曲线表格 -->  更新数据
 
 //创建表格
@@ -111,6 +112,7 @@ QChart * createSpectrumChart(int xlabel_code,int ylabel_code,QLineSeries * m_ser
 
 	return chart;
 }
+*/
 
 
 
