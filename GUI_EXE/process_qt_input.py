@@ -165,7 +165,8 @@ def run(in_path, script_path):
         os.chdir(dirname)
         from py_work.uvspec_run import OnRun
         #import py_work.uvspec_run
-        is_success, data_list = OnRun(out_dict, out_path, log_path)
+        is_success, data_log = OnRun(out_dict, out_path, log_path)
+        logging.info(data_log)
         #is_success = True
         if not is_success:
             return 202, u"运行失败！"
