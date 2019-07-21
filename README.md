@@ -6,3 +6,5 @@ GUI for radiometer
 
 2、GUI_RUN是qt运行的环境文件，包括python中间处理件和uvspec的运行环境，
 使用时将GUI_RUN下面的所有文件复制到QT工程生成的GUI.exe同级目录下即可。
+
+3、GUI_EXE是可以直接运行的环境，需要配置qt_conf/GUI.ini后，点击GUI.exe即可运行。
