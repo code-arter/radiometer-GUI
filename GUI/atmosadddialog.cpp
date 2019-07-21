@@ -19,6 +19,8 @@ void AtmosAddDialog::init_tab_widget(QStringList col_header, int row_count)
 
     /* 设置 tableWidget */
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    //ui->tableWidget->setColumnWidth(1, 500);
+
     ui->tableWidget->setHorizontalHeaderLabels(col_header);
 
     ui->tableWidget->verticalHeader()->setVisible(false); // 隐藏水平header

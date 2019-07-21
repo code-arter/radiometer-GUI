@@ -25,7 +25,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QString python_path, QString scripts_path, QWidget *parent = 0);
+    explicit MainWindow(QString conf_path="", QWidget *parent = 0);
     ~MainWindow();
 
     void init_widget_list();
@@ -45,6 +45,10 @@ public:
     int call_python(QString out_path);
     int init_python(QString out_path);
     int close_python();
+
+    void load_config_file(QString conf_path);
+    QVariant get_config(QString qstrnodename,QString qstrkeyname);
+
 
 private slots:
     void on_general_page_conf_clicked(QString path);
@@ -87,6 +91,10 @@ private:
     PyObject* pFunhello;
 
     Ui::MainWindow *ui;
+
+    QString conf_path;
+
+    QSettings *config_settings;
 
 
 

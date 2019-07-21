@@ -10,7 +10,7 @@ AtmosPherePage::AtmosPherePage(QWidget *parent) :
     mix_header << "类型(o2/h2o/co2/no2/ch4/n2o/f11/f12/f22)" << "值";
 
     QStringList modify_header = QStringList();
-    modify_header << "分子类型(O3/O2/H2O/CO2/NO2/BRO/OCLO/HCHO/O4/SO2/CH4/N2O/CO/N2)" << "值" << "单位(du/cm_2/mm)";
+    modify_header << "类型(O3/O2/H2O/CO2/NO2/BRO/\nOCLO/HCHO/O4/SO2/CH4/N2O/CO/N2)" << "值" << "单位(du/cm_2/mm)";
 
     this->atmos_add_mix_dialog = new AtmosAddDialog(QString("混合比设置"), mix_header, this);
     this->atmos_add_modify_dialog = new AtmosAddDialog(QString("柱体含量设置"), modify_header, this);

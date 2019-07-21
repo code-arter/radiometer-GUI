@@ -1,13 +1,19 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QString python_path, QString scripts_path, QWidget *parent) :
+MainWindow::MainWindow(QString conf_path, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->python_path = python_path;
-    this->scripts_path = scripts_path;
+
+    this->load_config_file(conf_path);
+    /*
+    this->python_path = this->get_config("mainwindow", "python_path").toString();
+    this->scripts_path = this->get_config("mainwindow", "scripts_path").toString();
+    */
+    qDebug() << this->python_path << this->scripts_path;
+
     this->p = NULL;
 
     general_page = new GeneralPage(this);
@@ -154,7 +160,9 @@ void MainWindow::set_conf(QVector<QString> &line_list)
         else
         {
             QString line_property = line_info.at(0);
-            QString line_val = line_info.at(1);
+            line_info.removeAt(0);
+
+            QString line_val = line_info.join(" ");
 
             if(line_property.isEmpty() || line_val.isEmpty())
             {
@@ -195,12 +203,14 @@ int MainWindow::close_python()
 }
 int MainWindow::init_python(QString out_path)
 {
+    /*
     QFileInfo fileinfo(this->python_path);
     QString python_home = fileinfo.path();
     const char *p = python_home.toStdString().c_str();
     char *tmp=const_cast<char*>(p);
     qDebug() << tmp;
     Py_SetPythonHome(tmp);
+    */
 
     Py_Initialize();
     if(!Py_IsInitialized())
@@ -225,9 +235,10 @@ int MainWindow::init_python(QString out_path)
 
  int MainWindow::call_python(QString out_path)
 {
+    QString Q_path = QCoreApplication::applicationDirPath() + "/process_qt_input.py";
 
     string tmp_path = out_path.toStdString();
-    string script_path = this->scripts_path.toStdString();
+    string script_path = Q_path.toStdString();
     PyObject_CallFunction(this->pFunhello, "ss", tmp_path.c_str(), script_path.c_str());
 }
 
@@ -312,4 +323,27 @@ void MainWindow::on_tabWidget_currentChanged(int index)
 {
     if(index == 5)
         this->input_conf_page->setInputConf(this->get_output_str());
+}
+
+void MainWindow::load_config_file(QString path)
+{
+
+    if (path.isEmpty())
+    {
+        this->conf_path = QCoreApplication::applicationDirPath() + "/qt_conf/GUI.ini";
+    }
+    else
+    {
+        this->conf_path = path;
+    }
+    qDebug() << this->conf_path;
+    this->config_settings = new QSettings(this->conf_path, QSettings::IniFormat);
+}
+
+QVariant MainWindow::get_config(QString qstrnodename,QString qstrkeyname)
+{
+
+    QVariant qvar = this->config_settings->value(QString("/%1/%2").arg(qstrnodename).arg(qstrkeyname));
+    return qvar;
+
 }
