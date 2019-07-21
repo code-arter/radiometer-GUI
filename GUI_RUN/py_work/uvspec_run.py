@@ -246,13 +246,13 @@ def get_source(help_input_dict, out_dict):
     source_unit = help_input_dict.get("source_unit", [])
     source_file = help_input_dict.get("source_file", [])
     if source_type:
-        source_list = ["source"]
-        source_list.append(source_type[0].split(" ")[1])
-        if(source_unit):
-            source_list.append(source_unit[0].split(" ")[1])
-        if(source_file):
-            source_list.append(source_file[0].split(" ")[1])
-        out_dict["source"] = [" ".join(source_list)]
+        s_type = source_type[0].split(" ")[1]
+        if source_file and source_unit:
+            s_unit = source_unit[0].split(" ")[1]
+            s_file = source_file[0].split(" ")[1]
+            out_dict["source"] = ["source %s %s %s " % (s_type, s_file, s_unit)]
+        else:
+            out_dict["source"] = ["source %s " % (s_type)]
 
 def get_others(help_input_dict, out_dict):
     omit_list = ["angle_of_pitch", "atmosphere_define", "global_mode", "main_wave", "azimuth_angle", "direction", "distance", "pressure_file", "temperature_file", "general_location", "latitude_file", "gas_file", "wavecount", "wavelength", "ic_set", "wc_set", "source_type", "source_file", "source_unit"]

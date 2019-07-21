@@ -151,19 +151,13 @@ def process_special_general_dict(general_dict):
     general_dict.pop("multi_choice")
 
 def process_zout_and_altitude(general_dict):
-    if "zout" not in general_dict:
+    if "zout_sea" not in general_dict:
         return
 
-    zout = general_dict["zout"][0].split(" ")[1]
-    altitude_val = general_dict.get("altitude", None)
-    if float(zout) > 120:
-        zout = "toa"
-    elif altitude_val is not None:
-        altitude = altitude_val[0].split(" ")[1]
-        zout = float(zout) - float(altitude)
-    else:
-        zout = zout
-    general_dict["zout"] = ["zout %s" % str(zout)]
+    zout = general_dict["zout_sea"][0].split(" ")[1]
+    if float(zout) >= 120:
+        zout_sea = "toa"
+        general_dict["zout_sea"] = ["zout  toa"]
 
 def getQtInputDict(data_dict):
 
@@ -261,12 +255,14 @@ def getQtInputDict(data_dict):
     else:
         other_dict["wc_file"] = []
 
-    if source_type and source_file and source_unit:
+    if source_type:
         s_type = source_type[0].split(" ")[1]
-        s_unit = source_unit[0].split(" ")[1]
-        s_file = source_file[0].split(" ")[1]
-        other_dict["source"] = ["source %s %s %s " % (s_type, s_file, s_unit)]
-
+        if source_file and source_unit:
+            s_unit = source_unit[0].split(" ")[1]
+            s_file = source_file[0].split(" ")[1]
+            other_dict["source"] = ["source %s %s %s " % (s_type, s_file, s_unit)]
+        else:
+            other_dict["source"] = ["source %s " % (s_type)]
     process_special_general_dict(general_dict)
 
     process_zout_and_altitude(general_dict)
