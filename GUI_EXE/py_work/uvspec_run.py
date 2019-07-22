@@ -5,13 +5,14 @@ import os
 import sys
 import re
 import time
+import threading
 import subprocess
 import traceback
 import pickle
 import math
 import copy
 import logging
-from special_process import getInputDict, set_option_multi_value, getRunMode, change_um_to_nm, convert_cloud_to_file, check_atmosphere_file, change_aerosol_haze, change_aerosol_season, change_aerosol_vulcan, get_atmos_file, create_new_file, create_grid_file_by_count, create_grid_file, getQtInputDict
+from special_process import set_option_multi_value, getRunMode, change_um_to_nm, convert_cloud_to_file, check_atmosphere_file, change_aerosol_haze, change_aerosol_season, change_aerosol_vulcan, get_atmos_file, create_new_file, create_grid_file_by_count, create_grid_file, getQtInputDict
 
 
 logger = logging.getLogger()
@@ -34,9 +35,9 @@ def getException(func):
 
     return deco
 
-class RunUvspecProcess(object):
+class RunUvspecProcess(threading.Thread):
     def __init__(self, input_file, output_file):
-        #threading.Thread.__init__(self)
+        threading.Thread.__init__(self)
         self.input_file = input_file
         self.output_file = output_file
         self.log = []
@@ -107,7 +108,8 @@ def OnRunSingle(input_list, out_file):
     tmp_file = os.path.abspath(".tmp_UVSPEC.INP")
     Save(tmp_file, input_list) # Save a temporary INP file with the latest modifications
     chl_thread = RunUvspecProcess(tmp_file, out_file)
-    chl_thread.run()
+    chl_thread.start()
+    chl_thread.join()
     return True, "".join(chl_thread.log)
 
 def SaveCycle(fname, input_data):

@@ -95,9 +95,12 @@ void GeneralPage::on_pushButton_plot_clicked()
 void GeneralPage::on_pushButton_conf_load_clicked()
 {
     QString path=QFileDialog::getOpenFileName(this,QStringLiteral("载入"),"C:\\",tr("All Files (*);;Text Files (*.txt)"));
-    this->ui->lineEdit_conf_file->setText(path);
+    if(!path.isEmpty())
+    {
+        this->ui->lineEdit_conf_file->setText(path);
+        emit GeneralLoadConfEvent(path);
+    }
 
-    emit GeneralLoadConfEvent(path);
 }
 
 void GeneralPage::on_comboBox_global_mode_currentTextChanged(const QString &arg1)
@@ -248,4 +251,9 @@ void GeneralPage::on_comboBox_multi_set_activated(int index)
         this->ui->lineEdit_height_end->setDisabled(true);
         this->ui->lineEdit_height_step->setDisabled(true);
     }
+}
+
+void GeneralPage::on_pushButton_source_file_2_clicked()
+{
+    this->ui->lineEdit_source_file->clear();
 }

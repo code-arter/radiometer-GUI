@@ -96,6 +96,7 @@ QChart * createSpectrumChart(int xlabel_code,int ylabel_code,QLineSeries * m_ser
             break;
         case 5:
              axisY->setTitleText(Yl_Transmit);
+            break;
         default:
              axisY->setTitleText(Yl_Rad_spec_waveLen);
         }

@@ -24,6 +24,7 @@ SOURCES += main.cpp\
     commonfunction.cpp \
     plotcurve.cpp \
     plotdialog.cpp \
+    singledialog.cpp \
     transmodelpage.cpp \
     waitdialog.cpp
 
@@ -37,6 +38,7 @@ HEADERS  += mainwindow.h \
     inputconfshow.h \
     plotcurve.h \
     plotdialog.h \
+    singledialog.h \
     transmodelpage.h \
     waitdialog.h
 
@@ -48,6 +50,7 @@ FORMS    += mainwindow.ui \
     atmospherepage.ui \
     inputconfshow.ui \
     plotdialog.ui \
+    singledialog.ui \
     transmodelpage.ui \
     waitdialog.ui
 

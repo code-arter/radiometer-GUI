@@ -14,7 +14,7 @@
 #include <Python.h>
 #include "plotcurve.h"
 #include "plotdialog.h"
-
+#include "singledialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -69,6 +69,7 @@ private:
     InputConfShow *input_conf_page;
 
     PlotDialog *plot_dialog;
+    SingleDialog *single_plot_dialog;
 
     WaitDialog *wait_dialog;
 

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SingleDialog</class>
+ <widget class="QDialog" name="SingleDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>498</width>
+    <height>357</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>10</y>
+     <width>261</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>绘图</string>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>221</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Y轴设置</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="comboBox_x">
+       <item>
+        <property name="text">
+         <string>波长</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>波数</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="comboBox_y">
+       <item>
+        <property name="text">
+         <string>光谱辐射亮度(w/m^2·Sr·nm)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>光谱辐射亮度(w/m^2·Sr·cm-1)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>积分辐射亮度(w/m^2·Sr)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>辐射亮温(Kevin)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>透过率</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>X轴设置</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>150</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Plot</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

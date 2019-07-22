@@ -66,6 +66,8 @@ private slots:
 
     void on_comboBox_multi_set_activated(int index);
 
+    void on_pushButton_source_file_2_clicked();
+
 private:
     Ui::GeneralPage *ui;
 };

@@ -8,7 +8,9 @@ CloudPage::CloudPage(QWidget *parent) :
     ui->setupUi(this);
 
     QStringList wc_set_header = QStringList();
-    wc_set_header << "文件类型(1d)" << "云底高(km)" << "云厚度(km)" << "密度(g/m3)" << "有效粒子半径(um)";
+    //wc_set_header << "文件类型(1d)" << "云底高(km)" << "云厚度(km)" << "密度(g/m3)" << "有效粒子半径(um)";
+    wc_set_header << "云底高(km)" << "云厚度(km)" << "密度(g/m3)" << "有效粒子半径(um)";
+
     this->cloud_add_wc_set_dialog = new AtmosAddDialog(QString("混合比设置"), wc_set_header, this);
 
     QStringList wc_modify_header = QStringList();
@@ -16,7 +18,9 @@ CloudPage::CloudPage(QWidget *parent) :
     this->cloud_add_wc_modify_dialog = new AtmosAddDialog(QString("混合比设置"), wc_modify_header, this);
 
     QStringList ic_set_header = QStringList();
-    ic_set_header << "文件类型(1d)" << "云底高(km)" << "云厚度(km)" << "密度(g/m3)" << "有效粒子半径(um)";
+    //ic_set_header << "文件类型(1d)" << "云底高(km)" << "云厚度(km)" << "密度(g/m3)" << "有效粒子半径(um)";
+    ic_set_header << "云底高(km)" << "云厚度(km)" << "密度(g/m3)" << "有效粒子半径(um)";
+
     this->cloud_add_ic_set_dialog = new AtmosAddDialog(QString("混合比设置"), ic_set_header, this);
 
     QStringList ic_modify_header = QStringList();

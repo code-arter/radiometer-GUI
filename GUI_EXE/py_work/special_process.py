@@ -161,7 +161,7 @@ def process_zout_and_altitude(general_dict):
 
 def getQtInputDict(data_dict):
 
-    general_options = ["global_mode", "direction", "main_wave", "main_wave",
+    general_options = ["global_mode", "direction", "main_wave", "main_wave", "zout_sea", "zout",
                        "general_location", "sight_height", "multi_choice", "angle_of_pitch", "azimuth_angle", "distance", "day_of_year"]
     data=[]
     general_dict = {}
@@ -181,6 +181,7 @@ def getQtInputDict(data_dict):
     source_file = ""
     source_unit = ""
     main_wave = ""
+    logging.info(data_dict)
 
     for option_name, option_val in data_dict.items():
         value = option_val
@@ -265,7 +266,7 @@ def getQtInputDict(data_dict):
             other_dict["source"] = ["source %s " % (s_type)]
     process_special_general_dict(general_dict)
 
-    process_zout_and_altitude(general_dict)
+    #process_zout_and_altitude(general_dict)
     logging.info(general_dict)
     phi_value = modify(general_dict["azimuth_angle"], {})
     logging.info(phi_value)
@@ -298,150 +299,6 @@ def getQtInputDict(data_dict):
     for value in value_list:
         data.extend(value)
 
-    # add other attrs
-    for attr, value in other_dict.items():
-        data.extend(value)
-
-
-    #check atmosphere_file user_defined or choice
-    modify_attr_dict["atmosphere_file"] = ["atmosphere_file %s" % get_atmos_file(atmos_file_list, atmosphere_define)]
-
-    #form a conf_dict for cycle running uvspec
-    res_dict = form_conf_dict(old_umu_value, old_distance_value, umu_value, phi_value, distance_value, modify_attr_dict["atmosphere_file"], output_type, data, general_dict["direction"])
-
-    return res_dict, "Success!"
-
-def getInputDict(Options):
-    data=[]
-    general_dict = {}
-    modify_attr_dict = {"wavecount": [], "wavelength": [], "output_quantity": [], "output_process": []}
-    atmos_list = ["gas_file", "pressure_file", "temperature_file", "latitude_file"]
-    atmos_file_list = []
-    omit_list = ["general_location", "main_wave"]
-    other_dict = {}
-    phi_value = None
-    atmosphere_define = ""
-    ic_set = ""
-    wc_set = ""
-    ic_file = ""
-    wc_file = ""
-
-    source_type = ""
-    source_file = ""
-    source_unit = ""
-
-    for option_name, Option_obj in Options.items():
-        if Option_obj.IsChanged() and  Option_obj.IsSet():
-            group = Option_obj.group if hasattr(Option_obj, "group") else ""
-            value = Option_obj.GetWriteValue()
-            if option_name in omit_list:
-                # attr in omit tabs, shoule be deleted
-                continue
-
-            if group == "general":
-                # new tab, should be specialy processed
-                general_dict[option_name] = value
-            elif option_name in modify_attr_dict:
-                # attr in other tabs, shoule be redefined
-                modify_attr_dict[option_name] = value
-            elif option_name in atmos_list:
-                atmos_file_list.append(value)
-            elif option_name == "ic_set":
-                ic_set = value
-                continue
-            elif option_name == "wc_set":
-                wc_set = value
-                continue
-            elif option_name == "ic_file":
-                ic_file = value
-                continue
-            elif option_name == "wc_file":
-                wc_file = value
-                continue
-            elif option_name == "source_type":
-                source_type = value
-                continue
-            elif option_name == "source_file":
-                source_file = value
-                continue
-            elif option_name == "source_unit":
-                source_unit = value
-                continue
-            elif option_name == "aerosol_haze":
-                other_dict["aerosol_haze"] = change_aerosol_haze(value)
-            elif option_name == "aerosol_season":
-                other_dict["aerosol_season"] = change_aerosol_season(value)
-            elif option_name == "aerosol_vulcan":
-                other_dict["aerosol_vulcan"] = change_aerosol_vulcan(value)
-            elif option_name == "atmosphere_define":
-                atmosphere_define = value[0].split(" ")[1]
-            else:
-                # attr in other tabs, should not be changed
-                other_dict[option_name] = value
-    if len(atmos_file_list) < 4:
-        return {}, "Failed: Lack of atmosphere_file"
-
-    #check general_dict 
-    is_success, lack_fields = check_input(general_dict)
-    if not is_success:
-        return {}, "Failed: Lack of %s" % lack_fields
-
-    # check other_dict, reduce the complicated attr
-    for attr in ["umu", "phi"]:
-        if attr in other_dict:
-            other_dict.pop(attr)
-    if ic_set:
-        other_dict["ic_file"] = convert_cloud_to_file("ic_set", ic_set)
-    elif ic_file:
-        other_dict["ic_file"] = ic_file
-    else:
-        other_dict["ic_file"] = [] 
-    if wc_set:
-        other_dict["wc_file"] = convert_cloud_to_file("wc_set", wc_set)
-    elif wc_file:
-        other_dict["wc_file"] = wc_file
-    else:
-        other_dict["wc_file"] = [] 
-
-    if source_type and source_file and source_unit:
-        s_type = source_type[0].split(" ")[1]
-        s_unit = source_unit[0].split(" ")[1]
-        s_file = source_file[0].split(" ")[1]
-        other_dict["source"] = ["source %s %s %s " % (s_type, s_file, s_unit)]
-
-    process_special_general_dict(general_dict)
-
-    process_zout_and_altitude(general_dict)
-    logging.info(general_dict)
-    phi_value = modify(general_dict["azimuth_angle"], {})
-    logging.info(phi_value)
-
-    #umu and distance
-    umu_value, distance_value, old_umu_value, old_distance_value = get_umu_and_distance(general_dict)
-
-    #type
-    output_type = process_output_type(modify_attr_dict["output_quantity"], modify_attr_dict["output_process"])
-    if output_type == 0:
-        if modify_attr_dict["output_quantity"]:
-            data.extend(modify_attr_dict["output_quantity"])
-        if modify_attr_dict["output_process"]:
-            data.extend(modify_attr_dict["output_process"])
-
-    #create grid_file
-    if modify_attr_dict["wavelength"]:
-        modify_attr_dict["wavelength"] = change_um_to_nm("wavelength", modify_attr_dict["wavelength"]) 
-        wave_grid_file = create_grid_file(modify_attr_dict["wavelength"])
-        data.extend(wave_grid_file)
-
-    if modify_attr_dict["wavecount"]:
-        wave_grid_file = create_grid_file_by_count(modify_attr_dict["wavecount"]);
-        data.extend(wave_grid_file)
-
-    #modify
-    value_list = modify_general(general_dict)
-    for value in value_list:
-        data.extend(value)
-    
     # add other attrs
     for attr, value in other_dict.items():
         data.extend(value)
