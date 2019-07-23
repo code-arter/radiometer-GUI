@@ -266,7 +266,7 @@ def getQtInputDict(data_dict):
             other_dict["source"] = ["source %s " % (s_type)]
     process_special_general_dict(general_dict)
 
-    #process_zout_and_altitude(general_dict)
+    process_zout_and_altitude(general_dict)
     logging.info(general_dict)
     phi_value = modify(general_dict["azimuth_angle"], {})
     logging.info(phi_value)

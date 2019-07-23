@@ -133,3 +133,8 @@ void CloudPage::on_add_page_cloudcover_clicked(QString val)
     this->ui->lineEdit_cloudcover->setText(val);
 
 }
+
+void CloudPage::on_pushButton_2_clicked()
+{
+    this->ui->lineEdit_wc_file->clear();
+}

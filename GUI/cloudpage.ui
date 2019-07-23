@@ -35,10 +35,17 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="2">
-      <widget class="QLineEdit" name="lineEdit_wc_file">
-       <property name="option_name" stdset="0">
-        <string>wc_file_path</string>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="pushButton_9">
+       <property name="text">
+        <string>设置多行</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>打开</string>
        </property>
       </widget>
      </item>
@@ -49,10 +56,102 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="2">
-      <widget class="QPushButton" name="pushButton_9">
+     <item row="2" column="1">
+      <widget class="QComboBox" name="comboBox_3">
+       <property name="option_name" stdset="0">
+        <string>wc_properties_type</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>hu</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>echam4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>mie</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_20">
+       <property name="text">
+        <string>水云修改</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>水云参数化  </string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="pushButton_10">
        <property name="text">
         <string>设置多行</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QComboBox" name="comboBox_2">
+       <property name="option_name" stdset="0">
+        <string>wc_properties_inter</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>interpolate</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_wc_set">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>wc_set</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLineEdit" name="lineEdit_wc_file">
+       <property name="option_name" stdset="0">
+        <string>wc_file_path</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>水云文件</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEdit_wc_modify">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>wc_modify</string>
        </property>
       </widget>
      </item>
@@ -88,105 +187,6 @@
        </item>
       </widget>
      </item>
-     <item row="3" column="2">
-      <widget class="QPushButton" name="pushButton_10">
-       <property name="text">
-        <string>设置多行</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QComboBox" name="comboBox_3">
-       <property name="option_name" stdset="0">
-        <string>wc_properties_type</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>off</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>hu</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>echam4</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>mie</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item row="0" column="3">
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>打开</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEdit_wc_set">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>wc_set</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2">
-      <widget class="QComboBox" name="comboBox_2">
-       <property name="option_name" stdset="0">
-        <string>wc_properties_inter</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>off</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>interpolate</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_20">
-       <property name="text">
-        <string>水云修改</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>水云文件</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>水云参数化  </string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="lineEdit_wc_modify">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>wc_modify</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
   </widget>
@@ -212,59 +212,27 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_4">
-     <item row="8" column="2">
-      <widget class="QPushButton" name="pushButton_8">
-       <property name="text">
-        <string>打开</string>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_ic_set">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>ic_set</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_18">
-       <property name="text">
-        <string>冰云文件</string>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="lineEdit_cloud_fraction_file">
+       <property name="option_name" stdset="0">
+        <string>cloud_fraction_file</string>
        </property>
       </widget>
      </item>
-     <item row="8" column="0">
-      <widget class="QLabel" name="label_16">
+     <item row="9" column="0">
+      <widget class="QLabel" name="label_10">
        <property name="text">
-        <string>云占比文件</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QPushButton" name="pushButton_11">
-       <property name="text">
-        <string>设置多行</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="2">
-      <widget class="QPushButton" name="pushButton_12">
-       <property name="text">
-        <string>设置多行</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_21">
-       <property name="text">
-        <string>冰云参数</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_15">
-       <property name="text">
-        <string>冰云参数化</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_14">
-       <property name="text">
-        <string>冰云晶体惯态</string>
+        <string>云重叠</string>
        </property>
       </widget>
      </item>
@@ -278,6 +246,38 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="comboBox_19">
+       <property name="option_name" stdset="0">
+        <string>ic_file_type</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1d</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3d</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>ipa_files</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>moments</string>
+        </property>
+       </item>
+      </widget>
+     </item>
      <item row="6" column="0">
       <widget class="QLabel" name="label_25">
        <property name="text">
@@ -285,17 +285,13 @@
        </property>
       </widget>
      </item>
-     <item row="8" column="1">
-      <widget class="QLineEdit" name="lineEdit_cloud_fraction_file">
-       <property name="option_name" stdset="0">
-        <string>cloud_fraction_file</string>
+     <item row="10" column="1">
+      <widget class="QLineEdit" name="lineEdit_cloudcover">
+       <property name="enabled">
+        <bool>false</bool>
        </property>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QLineEdit" name="lineEdit_ic_file">
        <property name="option_name" stdset="0">
-        <string>ic_file_path</string>
+        <string>cloudcover</string>
        </property>
       </widget>
      </item>
@@ -306,24 +302,39 @@
        </property>
       </widget>
      </item>
-     <item row="9" column="0">
-      <widget class="QLabel" name="label_10">
-       <property name="text">
-        <string>云重叠</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3">
-      <widget class="QPushButton" name="pushButton_6">
+     <item row="7" column="2">
+      <widget class="QPushButton" name="pushButton_7">
        <property name="text">
         <string>打开</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="2">
-      <widget class="QComboBox" name="comboBox_14">
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_14">
+       <property name="text">
+        <string>冰云晶体惯态</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>冰云射线
+追踪文件</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="label_26">
+       <property name="text">
+        <string>云覆盖</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QComboBox" name="comboBox_16">
        <property name="option_name" stdset="0">
-        <string>ic_properties_inter</string>
+        <string>ic_habit_yang2013_roughness</string>
        </property>
        <item>
         <property name="text">
@@ -332,7 +343,84 @@
        </item>
        <item>
         <property name="text">
-         <string>interpolate</string>
+         <string>smooth</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>moderate</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>severe</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="lineEdit_ic_fu">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>ic_fu</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QComboBox" name="comboBox_12">
+       <property name="option_name" stdset="0">
+        <string>ic_habit</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>solid-column</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>hollow-column</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>rough-aggregate</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>rosette-4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>rosette-6</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>plate</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>droxtal</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>dendrite</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>ghm</string>
         </property>
        </item>
       </widget>
@@ -394,20 +482,10 @@
        </item>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEdit_ic_set">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
+     <item row="2" column="2">
+      <widget class="QComboBox" name="comboBox_14">
        <property name="option_name" stdset="0">
-        <string>ic_set</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QComboBox" name="comboBox_12">
-       <property name="option_name" stdset="0">
-        <string>ic_habit</string>
+        <string>ic_properties_inter</string>
        </property>
        <item>
         <property name="text">
@@ -416,49 +494,24 @@
        </item>
        <item>
         <property name="text">
-         <string>solid-column</string>
+         <string>interpolate</string>
         </property>
        </item>
-       <item>
-        <property name="text">
-         <string>hollow-column</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>rough-aggregate</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>rosette-4</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>rosette-6</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>plate</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>droxtal</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>dendrite</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>ghm</string>
-        </property>
-       </item>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_18">
+       <property name="text">
+        <string>冰云文件</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>冰云晶体惯态
+  (yang2013)</string>
+       </property>
       </widget>
      </item>
      <item row="9" column="1">
@@ -493,11 +546,17 @@
        </item>
       </widget>
      </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="label_13">
+     <item row="6" column="2">
+      <widget class="QPushButton" name="pushButton_15">
        <property name="text">
-        <string>冰云晶体惯态
-  (yang2013)</string>
+        <string>设置多行</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="pushButton_11">
+       <property name="text">
+        <string>设置多行</string>
        </property>
       </widget>
      </item>
@@ -558,31 +617,11 @@
        </item>
       </widget>
      </item>
-     <item row="5" column="2">
-      <widget class="QComboBox" name="comboBox_16">
-       <property name="option_name" stdset="0">
-        <string>ic_habit_yang2013_roughness</string>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_21">
+       <property name="text">
+        <string>冰云参数</string>
        </property>
-       <item>
-        <property name="text">
-         <string>off</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>smooth</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>moderate</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>severe</string>
-        </property>
-       </item>
       </widget>
      </item>
      <item row="3" column="0">
@@ -592,67 +631,38 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QComboBox" name="comboBox_19">
-       <property name="option_name" stdset="0">
-        <string>ic_file_type</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>off</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>1d</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>3d</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>ipa_files</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>moments</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="label_12">
-       <property name="text">
-        <string>冰云射线
-追踪文件</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="2">
-      <widget class="QPushButton" name="pushButton_7">
+     <item row="0" column="3">
+      <widget class="QPushButton" name="pushButton_6">
        <property name="text">
         <string>打开</string>
        </property>
       </widget>
      </item>
-     <item row="10" column="0">
-      <widget class="QLabel" name="label_26">
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_16">
        <property name="text">
-        <string>云覆盖</string>
+        <string>云占比文件</string>
        </property>
       </widget>
      </item>
-     <item row="10" column="1">
-      <widget class="QLineEdit" name="lineEdit_cloudcover">
-       <property name="enabled">
-        <bool>false</bool>
+     <item row="8" column="2">
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="text">
+        <string>打开</string>
        </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="pushButton_12">
+       <property name="text">
+        <string>设置多行</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLineEdit" name="lineEdit_ic_file">
        <property name="option_name" stdset="0">
-        <string>cloudcover</string>
+        <string>ic_file_path</string>
        </property>
       </widget>
      </item>
@@ -663,20 +673,10 @@
        </property>
       </widget>
      </item>
-     <item row="6" column="2">
-      <widget class="QPushButton" name="pushButton_15">
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_15">
        <property name="text">
-        <string>设置多行</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="1">
-      <widget class="QLineEdit" name="lineEdit_ic_fu">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>ic_fu</string>
+        <string>冰云参数化</string>
        </property>
       </widget>
      </item>

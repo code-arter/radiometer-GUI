@@ -45,6 +45,8 @@ private slots:
     void on_add_page_ic_fu_clicked(QString val);
     void on_add_page_cloudcover_clicked(QString val);
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::CloudPage *ui;
 

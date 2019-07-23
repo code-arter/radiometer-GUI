@@ -95,19 +95,6 @@
            </property>
           </widget>
          </item>
-         <item row="5" column="1">
-          <widget class="QLineEdit" name="lineEdit_pressure">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="placeholderText">
-            <string>值</string>
-           </property>
-           <property name="option_name" stdset="0">
-            <string>pressure</string>
-           </property>
-          </widget>
-         </item>
          <item row="7" column="1">
           <widget class="QLineEdit" name="lineEdit_4">
            <property name="text">
@@ -118,6 +105,19 @@
            </property>
            <property name="option_name" stdset="0">
             <string>mol_abs_param_arg</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QLineEdit" name="lineEdit_pressure">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>值</string>
+           </property>
+           <property name="option_name" stdset="0">
+            <string>pressure</string>
            </property>
           </widget>
          </item>
@@ -202,6 +202,19 @@
            </item>
           </widget>
          </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="lineEdit_atmos_define">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>文件路径</string>
+           </property>
+           <property name="option_name" stdset="0">
+            <string>atmosphere_define</string>
+           </property>
+          </widget>
+         </item>
          <item row="2" column="0">
           <widget class="QLabel" name="label_61">
            <property name="text">
@@ -213,19 +226,6 @@
           <widget class="QLabel" name="label_31">
            <property name="text">
             <string>气压</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QLineEdit" name="lineEdit_atmos_define">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="placeholderText">
-            <string>文件路径</string>
-           </property>
-           <property name="option_name" stdset="0">
-            <string>atmosphere_define</string>
            </property>
           </widget>
          </item>
@@ -270,6 +270,13 @@
           <widget class="QPushButton" name="pushButton_4">
            <property name="text">
             <string>设置</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_67">
+           <property name="text">
+            <string>廓线自定义</string>
            </property>
           </widget>
          </item>
@@ -340,10 +347,10 @@
            </item>
           </widget>
          </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_67">
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_68">
            <property name="text">
-            <string>廓线自定义</string>
+            <string>导入模型</string>
            </property>
           </widget>
          </item>
@@ -351,13 +358,6 @@
           <widget class="QLabel" name="label_66">
            <property name="text">
             <string>湿度廓线</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_68">
-           <property name="text">
-            <string>导入模型</string>
            </property>
           </widget>
          </item>

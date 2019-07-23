@@ -128,6 +128,12 @@ void PlotDialog::on_pushButton_clicked()
             x_mark = 3;
             QString filename = QString("%1_%2_%3_integrate").arg(umu).arg(distance).arg(output_quantity);
             QString filepath = QString("%1/%2").arg(this->plot_dir).arg(filename);
+            QFileInfo file_info(filepath);
+            if(!file_info.exists())
+            {
+                QMessageBox::information(NULL, "警告", "找不到对应的输出文件！", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+                return;
+            }
 
             QVector<QString> line_list;
             this->read_conf(filepath, line_list);
@@ -139,11 +145,11 @@ void PlotDialog::on_pushButton_clicked()
                     first_line = line_list[index];
             }
             QStringList phi_list = first_line.split(" ", QString::SkipEmptyParts);
-            for(int index =0 ;index < phi_list.size(); index++)
+            qDebug() << phi_list;
+            qDebug() << this->phi;
+            for(int index =0 ;index < this->phi.size(); index++)
             {
-                if(index == 0)
-                    continue;
-                line_points.append(QString("%1 %2").arg(this->phi[index]).arg(phi_list[index]));
+                line_points.append(QString("%1 %2").arg(this->phi[index]).arg(phi_list[index+1]));
             }
         }
         else if(this->umu.size() != 1)
@@ -153,6 +159,13 @@ void PlotDialog::on_pushButton_clicked()
             {
                 QString filename = QString("%1_%2_%3_integrate").arg(this->umu[index]).arg(distance).arg(output_quantity);
                 QString filepath = QString("%1/%2").arg(this->plot_dir).arg(filename);
+                QFileInfo file_info(filepath);
+                if(!file_info.exists())
+                {
+                    QMessageBox::information(NULL, "警告", "找不到对应的输出文件！", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+                    return;
+                }
+
                 QVector<QString> line_list;
                 this->read_conf(filepath, line_list);
 
@@ -175,6 +188,13 @@ void PlotDialog::on_pushButton_clicked()
             {
                 QString filename = QString("%1_%2_%3_integrate").arg(umu).arg(this->distance[index]).arg(output_quantity);
                 QString filepath = QString("%1/%2").arg(this->plot_dir).arg(filename);
+                QFileInfo file_info(filepath);
+                if(!file_info.exists())
+                {
+                    QMessageBox::information(NULL, "警告", "找不到对应的输出文件！", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+                    return;
+                }
+
                 QVector<QString> line_list;
                 this->read_conf(filepath, line_list);
 

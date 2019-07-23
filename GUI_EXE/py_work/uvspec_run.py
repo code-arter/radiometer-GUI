@@ -181,6 +181,7 @@ def OnRunNew(data_dict, out_file):
             os.remove(tmp_file)
             out_file_list.append(tmp_out_file)
             total_log.append("\n%s-run finished!" % key)
+    logger.info("phi_list: %s" % phi_list)
     double_phi_list = [float(phi) for phi in phi_list]
     double_umu_list = [float(umu) for umu in umu_list];
     double_distance_list = [float(distance) for distance in distance_list];
@@ -190,7 +191,7 @@ def OnRunNew(data_dict, out_file):
 
     phi_list = [str(phi) for phi in double_phi_list];
     umu_list = [str(umu) for umu in double_umu_list];
-    phi_list = [str(distance) for distance in double_distance_list];
+    distance_list = [str(distance) for distance in double_distance_list];
 
     key_list = [','.join(output_process), ','.join(output_quantity), ','.join(phi_list), ','.join(umu_list), ','.join(distance_list)]
     tmp_key_path = os.path.join(out_dir, "key_path")
@@ -206,18 +207,16 @@ def OnRun(out_dict, out_file, log_path):
     fh.setFormatter(formatter)
     logger.addHandler(fh)
 
-    data_list = getQtInput(out_dict)
     print "*" * 50
     run_mode_list = out_dict.pop("global_mode", "")
     run_mode = run_mode_list[0].split(" ")[1]
-    #print "global_mode", run_mode, u"批处理模式"
 
     if run_mode == u"批处理模式":
         logger.info("multi")
         return OnRunNew(out_dict, out_file)
     else:
         logger.info("single")
-
+        data_list = getQtInput(out_dict)
         return OnRunSingle(data_list, out_file)
 
 

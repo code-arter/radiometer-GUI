@@ -6,7 +6,7 @@ output_user lambda uu
 altitude 0
 sza 7
 day_of_year 147
-wavelength_grid_file wavelength_grid\wave_grid_file-1563813538.91
+wavelength_grid_file wavelength_grid\wave_grid_file-1563860121.63
 zout toa
 sur_temperature 290
 phi0 124
