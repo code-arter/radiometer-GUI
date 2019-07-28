@@ -51,6 +51,8 @@ class QtConfManager(object):
                 self.out_file_path = input_val
             elif(input_key == "task_id"):
                 self.task_id = input_val
+            elif input_key == "output_quantity" and input_val == "radiance":
+                continue
             else:
                 qt_dict[input_key] = input_val
         return qt_dict
