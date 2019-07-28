@@ -22,6 +22,12 @@
      <height>131</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="title">
     <string>光谱设置</string>
    </property>
@@ -34,9 +40,21 @@
       <height>101</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
     <layout class="QGridLayout" name="gridLayout_10">
      <item row="1" column="0">
       <widget class="QLabel" name="label_42">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>波长范围</string>
        </property>
@@ -44,6 +62,12 @@
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_43">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>波数范围</string>
        </property>
@@ -51,6 +75,12 @@
      </item>
      <item row="2" column="2">
       <widget class="QLineEdit" name="lineEdit_wavecount_end">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="placeholderText">
         <string>终止(cm-1)</string>
        </property>
@@ -61,6 +91,12 @@
      </item>
      <item row="1" column="3">
       <widget class="QLineEdit" name="lineEdit_wavelength_step">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="placeholderText">
         <string>步长(um)</string>
        </property>
@@ -71,6 +107,12 @@
      </item>
      <item row="2" column="1">
       <widget class="QLineEdit" name="lineEdit_wavecount_start">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="placeholderText">
         <string>起始(cm-1)</string>
        </property>
@@ -84,6 +126,12 @@
      </item>
      <item row="1" column="1">
       <widget class="QLineEdit" name="lineEdit_wavelength_start">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="placeholderText">
         <string>起始(um)</string>
        </property>
@@ -94,6 +142,12 @@
      </item>
      <item row="2" column="3">
       <widget class="QLineEdit" name="lineEdit_wavecount_step">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="placeholderText">
         <string>步长(cm-1)</string>
        </property>
@@ -104,6 +158,12 @@
      </item>
      <item row="1" column="2">
       <widget class="QLineEdit" name="lineEdit_wavelength_end">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="placeholderText">
         <string>终止(um)</string>
        </property>
@@ -114,6 +174,12 @@
      </item>
      <item row="0" column="0">
       <widget class="QLabel" name="label_28">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="accessibleName">
         <string/>
        </property>
@@ -124,6 +190,12 @@
      </item>
      <item row="0" column="1">
       <widget class="QComboBox" name="comboBox_main_wave">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>main_wave</string>
        </property>
@@ -151,6 +223,12 @@
      <height>101</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="title">
     <string>模式设置</string>
    </property>
@@ -162,6 +240,12 @@
       <width>371</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>11</pointsize>
+     </font>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,9">
      <property name="leftMargin">
@@ -178,6 +262,12 @@
      </property>
      <item>
       <widget class="QLabel" name="label_21">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="accessibleName">
         <string/>
        </property>
@@ -188,6 +278,12 @@
      </item>
      <item>
       <widget class="QComboBox" name="comboBox_global_mode">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>global_mode</string>
        </property>
@@ -214,6 +310,12 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
     <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,9">
      <property name="leftMargin">
       <number>0</number>
@@ -229,6 +331,12 @@
      </property>
      <item>
       <widget class="QLabel" name="label_23">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>观测模式</string>
        </property>
@@ -236,6 +344,12 @@
      </item>
      <item>
       <widget class="QComboBox" name="comboBox_direction">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>direction</string>
        </property>
@@ -263,6 +377,12 @@
      <height>161</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="title">
     <string>输出设置</string>
    </property>
@@ -271,13 +391,25 @@
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>62</width>
+      <width>77</width>
       <height>131</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>11</pointsize>
+     </font>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_24">
      <item>
       <widget class="QLabel" name="label_19">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>输出处理</string>
        </property>
@@ -285,6 +417,12 @@
      </item>
      <item>
       <widget class="QLabel" name="label_24">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>输出格式</string>
        </property>
@@ -292,6 +430,12 @@
      </item>
      <item>
       <widget class="QLabel" name="label_25">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>输出自定义</string>
        </property>
@@ -299,6 +443,12 @@
      </item>
      <item>
       <widget class="QLabel" name="label_26">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>输出物理量</string>
        </property>
@@ -309,21 +459,38 @@
    <widget class="QWidget" name="verticalLayoutWidget_22">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>100</x>
       <y>20</y>
-      <width>311</width>
+      <width>301</width>
       <height>131</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>11</pointsize>
+     </font>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_25">
      <item>
       <widget class="QComboBox" name="comboBox_output_process">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>output_process</string>
        </property>
        <item>
         <property name="text">
          <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>per_cm-1</string>
         </property>
        </item>
        <item>
@@ -358,11 +525,6 @@
        </item>
        <item>
         <property name="text">
-         <string>per_cm-1</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
          <string>per_band</string>
         </property>
        </item>
@@ -375,6 +537,12 @@
      </item>
      <item>
       <widget class="QComboBox" name="comboBox_output_format">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>output_format</string>
        </property>
@@ -407,6 +575,12 @@
      </item>
      <item>
       <widget class="QComboBox" name="comboBox_output_user">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>output_user</string>
        </property>
@@ -417,24 +591,35 @@
        </item>
        <item>
         <property name="text">
-         <string>lambda uu</string>
+         <string>wavenumber uu</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>wavenumber uu</string>
+         <string>lambda uu</string>
         </property>
        </item>
       </widget>
      </item>
      <item>
       <widget class="QComboBox" name="comboBox_output_quantity">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>output_quantity</string>
        </property>
        <item>
         <property name="text">
          <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>radiance</string>
         </property>
        </item>
        <item>
@@ -471,6 +656,12 @@
      <height>391</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="title">
     <string>观测几何</string>
    </property>
@@ -480,83 +671,37 @@
       <x>20</x>
       <y>20</y>
       <width>381</width>
-      <height>161</height>
+      <height>170</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
     <layout class="QGridLayout" name="gridLayout_7">
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_45">
-       <property name="text">
-        <string>观测高度</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEdit_umu_start">
-       <property name="placeholderText">
-        <string>起始(deg)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>angle_of_pitch_start</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="3">
-      <widget class="QLineEdit" name="lineEdit_umu_step">
-       <property name="placeholderText">
-        <string>步长(deg)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>angle_of_pitch_step</string>
-       </property>
-      </widget>
-     </item>
      <item row="3" column="0">
       <widget class="QLabel" name="label_46">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>观测方位角</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="2">
-      <widget class="QLineEdit" name="lineEdit_umu_end">
-       <property name="placeholderText">
-        <string>终止(deg)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>angle_of_pitch_end</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_47">
-       <property name="text">
-        <string>经纬度</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="lineEdit_jingdu">
-       <property name="placeholderText">
-        <string>经度(deg)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>longitude</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="lineEdit_height_start">
-       <property name="placeholderText">
-        <string>起始(km)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>distance_start</string>
-       </property>
-      </widget>
-     </item>
      <item row="4" column="2">
       <widget class="QLineEdit" name="lineEdit_height_end">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -568,15 +713,14 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_44">
-       <property name="text">
-        <string>观测俯仰角</string>
-       </property>
-      </widget>
-     </item>
      <item row="3" column="3">
       <widget class="QLineEdit" name="lineEdit_phi_step">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="placeholderText">
         <string>步长(deg)</string>
        </property>
@@ -585,28 +729,14 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="2">
-      <widget class="QLineEdit" name="lineEdit_weidu">
-       <property name="placeholderText">
-        <string>纬度(deg)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>latitude</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="2">
-      <widget class="QLineEdit" name="lineEdit_phi_end">
-       <property name="placeholderText">
-        <string>终止(deg)</string>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>azimuth_angle_end</string>
-       </property>
-      </widget>
-     </item>
      <item row="3" column="1">
       <widget class="QLineEdit" name="lineEdit_phi_start">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -618,8 +748,46 @@
        </property>
       </widget>
      </item>
+     <item row="3" column="2">
+      <widget class="QLineEdit" name="lineEdit_phi_end">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="placeholderText">
+        <string>终止(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>azimuth_angle_end</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="lineEdit_height_start">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="placeholderText">
+        <string>起始(km)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>distance_start</string>
+       </property>
+      </widget>
+     </item>
      <item row="4" column="3">
       <widget class="QLineEdit" name="lineEdit_height_step">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="placeholderText">
         <string>步长(km)</string>
        </property>
@@ -628,8 +796,59 @@
        </property>
       </widget>
      </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_45">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>观测高度</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEdit_umu_start">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="placeholderText">
+        <string>起始(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>angle_of_pitch_start</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLineEdit" name="lineEdit_umu_step">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="placeholderText">
+        <string>步长(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>angle_of_pitch_step</string>
+       </property>
+      </widget>
+     </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_22">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="accessibleName">
         <string/>
        </property>
@@ -638,8 +857,88 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_47">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>经纬度</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_44">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>观测俯仰角</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="lineEdit_umu_end">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="placeholderText">
+        <string>终止(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>angle_of_pitch_end</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEdit_jingdu">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="placeholderText">
+        <string>经度(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>longitude</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLineEdit" name="lineEdit_weidu">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="placeholderText">
+        <string>纬度(deg)</string>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>latitude</string>
+       </property>
+      </widget>
+     </item>
      <item row="1" column="1">
       <widget class="QComboBox" name="comboBox_multi_set">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>multi_choice</string>
        </property>
@@ -676,9 +975,21 @@
       <height>191</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
     <layout class="QGridLayout" name="gridLayout_11">
      <item row="1" column="0">
       <widget class="QLabel" name="label_48">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>表面温度</string>
        </property>
@@ -686,6 +997,12 @@
      </item>
      <item row="3" column="0">
       <widget class="QLabel" name="label_49">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>太阳俯仰角</string>
        </property>
@@ -693,6 +1010,12 @@
      </item>
      <item row="2" column="1">
       <widget class="QLineEdit" name="lineEdit_albedo">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>albedo</string>
        </property>
@@ -700,6 +1023,12 @@
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_50">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>反照率</string>
        </property>
@@ -707,6 +1036,12 @@
      </item>
      <item row="1" column="1">
       <widget class="QLineEdit" name="lineEdit_sur_temperature">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>sur_temperature</string>
        </property>
@@ -714,6 +1049,12 @@
      </item>
      <item row="3" column="1">
       <widget class="QLineEdit" name="lineEdit_sun_umu">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="placeholderText">
         <string>(deg)</string>
        </property>
@@ -724,6 +1065,12 @@
      </item>
      <item row="0" column="0">
       <widget class="QLabel" name="label_51">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>视点高度</string>
        </property>
@@ -731,6 +1078,12 @@
      </item>
      <item row="5" column="0">
       <widget class="QLabel" name="label_52">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>年中日</string>
        </property>
@@ -738,6 +1091,12 @@
      </item>
      <item row="4" column="0">
       <widget class="QLabel" name="label_53">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>太阳方位角</string>
        </property>
@@ -745,6 +1104,12 @@
      </item>
      <item row="4" column="1">
       <widget class="QLineEdit" name="lineEdit_sum_phi">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="placeholderText">
         <string>(deg)</string>
        </property>
@@ -755,6 +1120,12 @@
      </item>
      <item row="5" column="1">
       <widget class="QLineEdit" name="lineEdit_day_of_year">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="placeholderText">
         <string>(1-366)</string>
        </property>
@@ -765,6 +1136,12 @@
      </item>
      <item row="0" column="1">
       <widget class="QLineEdit" name="lineEdit_zout">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="placeholderText">
         <string>(km)</string>
        </property>
@@ -785,6 +1162,12 @@
      <height>161</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="title">
     <string>基本设置</string>
    </property>
@@ -797,12 +1180,24 @@
       <height>131</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
     <layout class="QGridLayout" name="gridLayout_12">
      <property name="horizontalSpacing">
       <number>6</number>
      </property>
      <item row="1" column="2">
       <widget class="QPushButton" name="pushButton_save_run">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>保存并运行</string>
        </property>
@@ -810,6 +1205,12 @@
      </item>
      <item row="2" column="2">
       <widget class="QPushButton" name="pushButton_open_plot">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>打开并绘制</string>
        </property>
@@ -817,6 +1218,12 @@
      </item>
      <item row="0" column="2">
       <widget class="QPushButton" name="pushButton_conf_load">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>载入配置项</string>
        </property>
@@ -824,6 +1231,12 @@
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>保存运行</string>
        </property>
@@ -831,6 +1244,12 @@
      </item>
      <item row="2" column="1">
       <widget class="QLineEdit" name="lineEdit_plot_file">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>plot_file_path</string>
        </property>
@@ -838,6 +1257,12 @@
      </item>
      <item row="2" column="3">
       <widget class="QPushButton" name="pushButton_plot">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>绘制</string>
        </property>
@@ -845,6 +1270,12 @@
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_27">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>打开绘制</string>
        </property>
@@ -852,6 +1283,12 @@
      </item>
      <item row="0" column="3">
       <widget class="QPushButton" name="pushButton_conf_save">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>另存为</string>
        </property>
@@ -859,6 +1296,12 @@
      </item>
      <item row="0" column="0">
       <widget class="QLabel" name="label_4">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>配置设置</string>
        </property>
@@ -866,6 +1309,12 @@
      </item>
      <item row="0" column="1">
       <widget class="QLineEdit" name="lineEdit_conf_file">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>conf_file_path</string>
        </property>
@@ -873,6 +1322,12 @@
      </item>
      <item row="1" column="1">
       <widget class="QLineEdit" name="lineEdit_out_file">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>out_file_path</string>
        </property>
@@ -880,6 +1335,12 @@
      </item>
      <item row="1" column="3">
       <widget class="QPushButton" name="pushButton_run">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>运行</string>
        </property>
@@ -897,6 +1358,12 @@
      <height>141</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="title">
     <string>辐射设置</string>
    </property>
@@ -908,6 +1375,12 @@
       <width>371</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>11</pointsize>
+     </font>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="1,9">
      <property name="leftMargin">
@@ -924,6 +1397,12 @@
      </property>
      <item>
       <widget class="QLabel" name="label_65">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>单位设置</string>
        </property>
@@ -931,6 +1410,12 @@
      </item>
      <item>
       <widget class="QComboBox" name="comboBox_source_unit">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>source_unit</string>
        </property>
@@ -967,6 +1452,12 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
     <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="1,9">
      <property name="leftMargin">
       <number>0</number>
@@ -982,6 +1473,12 @@
      </property>
      <item>
       <widget class="QLabel" name="label_64">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>辐 射 源</string>
        </property>
@@ -989,6 +1486,12 @@
      </item>
      <item>
       <widget class="QComboBox" name="comboBox_source_type">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>source_type</string>
        </property>
@@ -1020,9 +1523,21 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
     <layout class="QGridLayout" name="gridLayout_16">
      <item row="0" column="0">
       <widget class="QLabel" name="label_61">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>文件路径</string>
        </property>
@@ -1030,6 +1545,12 @@
      </item>
      <item row="0" column="2">
       <widget class="QPushButton" name="pushButton_source_file">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>设置</string>
        </property>
@@ -1037,6 +1558,12 @@
      </item>
      <item row="0" column="1">
       <widget class="QLineEdit" name="lineEdit_source_file">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="placeholderText">
         <string>文件路径</string>
        </property>
@@ -1047,6 +1574,12 @@
      </item>
      <item row="0" column="3">
       <widget class="QPushButton" name="pushButton_source_file_2">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>清空</string>
        </property>

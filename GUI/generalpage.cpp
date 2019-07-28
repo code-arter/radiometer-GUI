@@ -11,6 +11,8 @@ GeneralPage::GeneralPage(QWidget *parent) :
 
     this->set_single_mode(true);
     this->on_comboBox_multi_set_activated(0);
+    this->ui->pushButton_source_file_2->hide();
+
 
 }
 
@@ -28,11 +30,6 @@ void GeneralPage::on_pushButton_run_clicked()
     else {
         this->call_main_run();
     }
-}
-
-void GeneralPage::on_pushButton_load_clicked()
-{
-    ;
 }
 
 void GeneralPage::on_pushButton_save_run_clicked()
@@ -101,11 +98,6 @@ void GeneralPage::on_pushButton_conf_load_clicked()
         emit GeneralLoadConfEvent(path);
     }
 
-}
-
-void GeneralPage::on_comboBox_global_mode_currentTextChanged(const QString &arg1)
-{
-    ;
 }
 
 void GeneralPage::on_comboBox_global_mode_currentIndexChanged(int index)
@@ -256,4 +248,12 @@ void GeneralPage::on_comboBox_multi_set_activated(int index)
 void GeneralPage::on_pushButton_source_file_2_clicked()
 {
     this->ui->lineEdit_source_file->clear();
+}
+
+void GeneralPage::on_lineEdit_source_file_textChanged(const QString &arg1)
+{
+    if(arg1.isEmpty())
+        this->ui->pushButton_source_file_2->hide();
+    else
+        this->ui->pushButton_source_file_2->show();
 }

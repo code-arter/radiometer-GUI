@@ -7,33 +7,45 @@ CloudPage::CloudPage(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    this->ui->pushButton_wc_file_clear->hide();
+    this->ui->pushButton_wc_set_clear->hide();
+    this->ui->pushButton_wc_modify_clear->hide();
+    this->ui->pushButton_ic_file_clear->hide();
+    this->ui->pushButton_ic_set_clear->hide();
+    this->ui->pushButton_ic_modify_clear->hide();
+    this->ui->pushButton_ic_fu_clear->hide();
+    this->ui->pushButton_ic_raytracing_clear->hide();
+    this->ui->pushButton_cloud_fraction_clear->hide();
+    this->ui->pushButton_cloudcover_clear->hide();
+
+
     QStringList wc_set_header = QStringList();
     //wc_set_header << "文件类型(1d)" << "云底高(km)" << "云厚度(km)" << "密度(g/m3)" << "有效粒子半径(um)";
     wc_set_header << "云底高(km)" << "云厚度(km)" << "密度(g/m3)" << "有效粒子半径(um)";
 
-    this->cloud_add_wc_set_dialog = new AtmosAddDialog(QString("混合比设置"), wc_set_header, this);
+    this->cloud_add_wc_set_dialog = new AtmosAddDialog(QString("水云参数"), wc_set_header, this);
 
     QStringList wc_modify_header = QStringList();
     wc_modify_header << "参数(gg, ssa, tau, tau550)" << "范围设置(set, scale)" << "值";
-    this->cloud_add_wc_modify_dialog = new AtmosAddDialog(QString("混合比设置"), wc_modify_header, this);
+    this->cloud_add_wc_modify_dialog = new AtmosAddDialog(QString("水云修改"), wc_modify_header, this);
 
     QStringList ic_set_header = QStringList();
     //ic_set_header << "文件类型(1d)" << "云底高(km)" << "云厚度(km)" << "密度(g/m3)" << "有效粒子半径(um)";
     ic_set_header << "云底高(km)" << "云厚度(km)" << "密度(g/m3)" << "有效粒子半径(um)";
 
-    this->cloud_add_ic_set_dialog = new AtmosAddDialog(QString("混合比设置"), ic_set_header, this);
+    this->cloud_add_ic_set_dialog = new AtmosAddDialog(QString("冰云参数"), ic_set_header, this);
 
     QStringList ic_modify_header = QStringList();
     ic_modify_header << "参数(gg, ssa, tau, tau550)" << "范围设置(set, scale)" << "值";
-    this->cloud_add_ic_modify_dialog = new AtmosAddDialog(QString("混合比设置"), ic_modify_header, this);
+    this->cloud_add_ic_modify_dialog = new AtmosAddDialog(QString("冰云修改"), ic_modify_header, this);
 
     QStringList ic_fu_header = QStringList();
     ic_fu_header << "id1(reff_def, deltascaling)" << "id2(on, off)" << "值";
-    this->cloud_add_ic_fu_dialog = new AtmosAddDialog(QString("混合比设置"), ic_fu_header, this);
+    this->cloud_add_ic_fu_dialog = new AtmosAddDialog(QString("冰云(Fu)"), ic_fu_header, this);
 
     QStringList cloudcover_header = QStringList();
     cloudcover_header << "云类型(wc, ic)" << "云覆盖(0-1)" << "值";
-    this->cloud_add_cloudcover_dialog = new AtmosAddDialog(QString("柱体含量设置"), cloudcover_header, this);
+    this->cloud_add_cloudcover_dialog = new AtmosAddDialog(QString("云覆盖"), cloudcover_header, this);
 
     connect(this->cloud_add_wc_set_dialog, SIGNAL(AddDialogSaveEvent(QString)),this,SLOT(on_add_page_wc_set_clicked(QString)));
     connect(this->cloud_add_wc_modify_dialog, SIGNAL(AddDialogSaveEvent(QString)),this,SLOT(on_add_page_wc_modify_clicked(QString)));
@@ -134,7 +146,138 @@ void CloudPage::on_add_page_cloudcover_clicked(QString val)
 
 }
 
-void CloudPage::on_pushButton_2_clicked()
+
+void CloudPage::on_pushButton_wc_file_clear_clicked()
 {
     this->ui->lineEdit_wc_file->clear();
+}
+
+void CloudPage::on_pushButton_wc_set_clear_clicked()
+{
+    this->ui->lineEdit_wc_set->clear();
+}
+
+void CloudPage::on_pushButton_wc_modify_clear_clicked()
+{
+    this->ui->lineEdit_wc_modify->clear();
+}
+
+void CloudPage::on_pushButton_ic_file_clear_clicked()
+{
+    this->ui->lineEdit_ic_file->clear();
+}
+
+void CloudPage::on_pushButton_ic_set_clear_clicked()
+{
+    this->ui->lineEdit_ic_set->clear();
+}
+
+void CloudPage::on_pushButton_ic_modify_clear_clicked()
+{
+    this->ui->lineEdit_ic_modify->clear();
+}
+
+void CloudPage::on_pushButton_ic_fu_clear_clicked()
+{
+    this->ui->lineEdit_ic_fu->clear();
+}
+
+void CloudPage::on_pushButton_ic_raytracing_clear_clicked()
+{
+    this->ui->lineEdit_ic_raytracing_file->clear();
+}
+
+void CloudPage::on_pushButton_cloud_fraction_clear_clicked()
+{
+    this->ui->lineEdit_cloud_fraction_file->clear();
+}
+
+void CloudPage::on_pushButton_cloudcover_clear_clicked()
+{
+    this->ui->lineEdit_cloudcover->clear();
+}
+
+void CloudPage::on_lineEdit_wc_file_textChanged(const QString &arg1)
+{
+    if(arg1.isEmpty())
+        this->ui->pushButton_wc_file_clear->hide();
+    else
+        this->ui->pushButton_wc_file_clear->show();
+}
+
+void CloudPage::on_lineEdit_wc_set_textChanged(const QString &arg1)
+{
+    if(arg1.isEmpty())
+        this->ui->pushButton_wc_set_clear->hide();
+    else
+        this->ui->pushButton_wc_set_clear->show();
+}
+
+void CloudPage::on_lineEdit_wc_modify_textChanged(const QString &arg1)
+{
+    if(arg1.isEmpty())
+        this->ui->pushButton_wc_modify_clear->hide();
+    else
+        this->ui->pushButton_wc_modify_clear->show();
+}
+
+void CloudPage::on_lineEdit_ic_file_textChanged(const QString &arg1)
+{
+    if(arg1.isEmpty())
+        this->ui->pushButton_ic_file_clear->hide();
+    else
+        this->ui->pushButton_ic_file_clear->show();
+}
+
+void CloudPage::on_lineEdit_ic_set_textChanged(const QString &arg1)
+{
+    if(arg1.isEmpty())
+        this->ui->pushButton_ic_set_clear->hide();
+    else
+        this->ui->pushButton_ic_set_clear->show();
+}
+
+void CloudPage::on_lineEdit_ic_modify_textChanged(const QString &arg1)
+{
+    if(arg1.isEmpty())
+        this->ui->pushButton_ic_modify_clear->hide();
+    else
+        this->ui->pushButton_ic_modify_clear->show();
+}
+
+void CloudPage::on_lineEdit_ic_fu_textChanged(const QString &arg1)
+{
+    if(arg1.isEmpty())
+        this->ui->pushButton_ic_fu_clear->hide();
+    else
+        this->ui->pushButton_ic_fu_clear->show();
+}
+
+void CloudPage::on_lineEdit_ic_raytracing_file_windowIconTextChanged(const QString &iconText)
+{
+    ;
+}
+
+void CloudPage::on_lineEdit_ic_raytracing_file_textChanged(const QString &arg1)
+{
+    if(arg1.isEmpty())
+        this->ui->pushButton_ic_raytracing_clear->hide();
+    else
+        this->ui->pushButton_ic_raytracing_clear->show();
+}
+
+void CloudPage::on_lineEdit_cloud_fraction_file_textChanged(const QString &arg1)
+{
+    if(arg1.isEmpty())
+        this->ui->pushButton_cloud_fraction_clear->hide();
+    else
+        this->ui->pushButton_cloud_fraction_clear->show();
+}
+
+void CloudPage::on_lineEdit_cloudcover_textChanged(const QString &arg1)
+{
+    if(arg1.isEmpty())
+        this->ui->pushButton_cloudcover_clear->hide();
+    else
+        this->ui->pushButton_cloudcover_clear->show();
 }

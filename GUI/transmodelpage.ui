@@ -22,6 +22,12 @@
      <height>201</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
    <property name="title">
     <string>基本设置</string>
    </property>
@@ -31,12 +37,24 @@
       <x>30</x>
       <y>30</y>
       <width>231</width>
-      <height>92</height>
+      <height>121</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
+     <property name="horizontalSpacing">
+      <number>6</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>14</number>
+     </property>
      <item row="0" column="1">
       <widget class="QComboBox" name="comboBox">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>rte_solver</string>
        </property>
@@ -79,20 +97,25 @@
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>球形反照</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>流数</string>
-       </property>
-      </widget>
-     </item>
      <item row="2" column="1">
       <widget class="QLineEdit" name="lineEdit_2">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="placeholderText">
         <string>值</string>
        </property>
@@ -103,6 +126,12 @@
      </item>
      <item row="0" column="0">
       <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>计算方法</string>
        </property>
@@ -110,6 +139,18 @@
      </item>
      <item row="1" column="1">
       <widget class="QComboBox" name="comboBox_2">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="editable">
+        <bool>false</bool>
+       </property>
        <property name="option_name" stdset="0">
         <string>disort_spherical_albedo</string>
        </property>
@@ -123,6 +164,19 @@
          <string>activate</string>
         </property>
        </item>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>流数</string>
+       </property>
       </widget>
      </item>
     </layout>

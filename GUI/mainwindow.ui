@@ -27,6 +27,12 @@
       <height>631</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
     <property name="currentIndex">
      <number>-1</number>
     </property>

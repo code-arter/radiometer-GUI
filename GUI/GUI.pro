@@ -17,13 +17,14 @@ SOURCES += main.cpp\
     aerosolpage.cpp \
     atmosadddialog.cpp \
     cloudpage.cpp \
+    imagedialog.cpp \
     inputconfshow.cpp \
         mainwindow.cpp \
     generalpage.cpp \
     atmospherepage.cpp \
     commonfunction.cpp \
+    multidialog.cpp \
     plotcurve.cpp \
-    plotdialog.cpp \
     singledialog.cpp \
     transmodelpage.cpp \
     waitdialog.cpp
@@ -35,9 +36,10 @@ HEADERS  += mainwindow.h \
     generalpage.h \
     atmospherepage.h \
     commonfunction.h \
+    imagedialog.h \
     inputconfshow.h \
+    multidialog.h \
     plotcurve.h \
-    plotdialog.h \
     singledialog.h \
     transmodelpage.h \
     waitdialog.h
@@ -48,8 +50,9 @@ FORMS    += mainwindow.ui \
     cloudpage.ui \
     generalpage.ui \
     atmospherepage.ui \
+    imagedialog.ui \
     inputconfshow.ui \
-    plotdialog.ui \
+    multidialog.ui \
     singledialog.ui \
     transmodelpage.ui \
     waitdialog.ui

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>810</width>
-    <height>736</height>
+    <height>642</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,11 +16,17 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>90</x>
      <y>20</y>
-     <width>571</width>
+     <width>711</width>
      <height>161</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>11</pointsize>
+    </font>
    </property>
    <property name="title">
     <string>水云设置</string>
@@ -28,29 +34,40 @@
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>20</x>
       <y>20</y>
-      <width>511</width>
+      <width>681</width>
       <height>131</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="2">
-      <widget class="QPushButton" name="pushButton_9">
+    <property name="font">
+     <font>
+      <family>宋体</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <layout class="QGridLayout" name="gridLayout" columnstretch="1,2,2,1,0">
+     <item row="3" column="2">
+      <widget class="QPushButton" name="pushButton_10">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>设置多行</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="3">
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>打开</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_19">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>水云参数</string>
        </property>
@@ -58,6 +75,12 @@
      </item>
      <item row="2" column="1">
       <widget class="QComboBox" name="comboBox_3">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>wc_properties_type</string>
        </property>
@@ -83,29 +106,14 @@
        </item>
       </widget>
      </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_20">
-       <property name="text">
-        <string>水云修改</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>水云参数化  </string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="2">
-      <widget class="QPushButton" name="pushButton_10">
-       <property name="text">
-        <string>设置多行</string>
-       </property>
-      </widget>
-     </item>
      <item row="2" column="2">
       <widget class="QComboBox" name="comboBox_2">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>wc_properties_inter</string>
        </property>
@@ -121,42 +129,66 @@
        </item>
       </widget>
      </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEdit_wc_set">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>wc_set</string>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="2">
       <widget class="QLineEdit" name="lineEdit_wc_file">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>wc_file_path</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label">
+     <item row="1" column="2">
+      <widget class="QPushButton" name="pushButton_9">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>水云文件</string>
+        <string>设置多行</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="lineEdit_wc_modify">
-       <property name="enabled">
-        <bool>false</bool>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="pushButton">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
        </property>
-       <property name="option_name" stdset="0">
-        <string>wc_modify</string>
+       <property name="text">
+        <string>打开</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>水云参数化</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
       <widget class="QComboBox" name="comboBox">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>wc_file_type</string>
        </property>
@@ -187,52 +219,183 @@
        </item>
       </widget>
      </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_20">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>水云修改</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_wc_set">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>wc_set</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>水云文件</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEdit_wc_modify">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>wc_modify</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QPushButton" name="pushButton_wc_file_clear">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>清空</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QPushButton" name="pushButton_wc_modify_clear">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>清空</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="pushButton_wc_set_clear">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>清空</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>90</x>
      <y>190</y>
-     <width>571</width>
-     <height>401</height>
+     <width>711</width>
+     <height>411</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>11</pointsize>
+    </font>
    </property>
    <property name="title">
     <string>冰云设置</string>
    </property>
-   <widget class="QWidget" name="gridLayoutWidget_4">
+   <widget class="QWidget" name="gridLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>20</x>
       <y>20</y>
-      <width>511</width>
-      <height>351</height>
+      <width>681</width>
+      <height>371</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout_4">
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEdit_ic_set">
-       <property name="enabled">
-        <bool>false</bool>
+    <layout class="QGridLayout" name="gridLayout_2" columnstretch="1,2,2,1,0">
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_25">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
        </property>
-       <property name="option_name" stdset="0">
-        <string>ic_set</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="1">
-      <widget class="QLineEdit" name="lineEdit_cloud_fraction_file">
-       <property name="option_name" stdset="0">
-        <string>cloud_fraction_file</string>
+       <property name="text">
+        <string>冰云(Fu)</string>
        </property>
       </widget>
      </item>
      <item row="9" column="0">
       <widget class="QLabel" name="label_10">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>云重叠</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_22">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>冰云修改</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="2">
+      <widget class="QPushButton" name="pushButton_15">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>设置多行</string>
        </property>
       </widget>
      </item>
@@ -241,6 +404,12 @@
        <property name="enabled">
         <bool>false</bool>
        </property>
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>ic_modify</string>
        </property>
@@ -248,6 +417,12 @@
      </item>
      <item row="0" column="1">
       <widget class="QComboBox" name="comboBox_19">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>ic_file_type</string>
        </property>
@@ -278,61 +453,14 @@
        </item>
       </widget>
      </item>
-     <item row="6" column="0">
-      <widget class="QLabel" name="label_25">
-       <property name="text">
-        <string>冰云(Fu)</string>
-       </property>
-      </widget>
-     </item>
-     <item row="10" column="1">
-      <widget class="QLineEdit" name="lineEdit_cloudcover">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="option_name" stdset="0">
-        <string>cloudcover</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="1">
-      <widget class="QLineEdit" name="lineEdit_ic_raytracing_file">
-       <property name="option_name" stdset="0">
-        <string>ic_raytracing_file</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="2">
-      <widget class="QPushButton" name="pushButton_7">
-       <property name="text">
-        <string>打开</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_14">
-       <property name="text">
-        <string>冰云晶体惯态</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="label_12">
-       <property name="text">
-        <string>冰云射线
-追踪文件</string>
-       </property>
-      </widget>
-     </item>
-     <item row="10" column="0">
-      <widget class="QLabel" name="label_26">
-       <property name="text">
-        <string>云覆盖</string>
-       </property>
-      </widget>
-     </item>
      <item row="5" column="2">
       <widget class="QComboBox" name="comboBox_16">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>ic_habit_yang2013_roughness</string>
        </property>
@@ -358,18 +486,127 @@
        </item>
       </widget>
      </item>
+     <item row="10" column="2">
+      <widget class="QPushButton" name="pushButton_16">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>设置多行</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="lineEdit_cloud_fraction_file">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>cloud_fraction_file</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="label_26">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>云覆盖</string>
+       </property>
+      </widget>
+     </item>
      <item row="6" column="1">
       <widget class="QLineEdit" name="lineEdit_ic_fu">
        <property name="enabled">
         <bool>false</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
        </property>
        <property name="option_name" stdset="0">
         <string>ic_fu</string>
        </property>
       </widget>
      </item>
+     <item row="10" column="1">
+      <widget class="QLineEdit" name="lineEdit_cloudcover">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>cloudcover</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_ic_set">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>ic_set</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_16">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>云占比文件</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_14">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>晶体惯态</string>
+       </property>
+      </widget>
+     </item>
      <item row="4" column="1">
       <widget class="QComboBox" name="comboBox_12">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>ic_habit</string>
        </property>
@@ -425,8 +662,41 @@
        </item>
       </widget>
      </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_12">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>冰云射线
+追踪文件</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_21">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>冰云参数</string>
+       </property>
+      </widget>
+     </item>
      <item row="2" column="1">
       <widget class="QComboBox" name="comboBox_18">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>ic_properties_type</string>
        </property>
@@ -482,86 +752,40 @@
        </item>
       </widget>
      </item>
-     <item row="2" column="2">
-      <widget class="QComboBox" name="comboBox_14">
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="lineEdit_ic_raytracing_file">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
-        <string>ic_properties_inter</string>
+        <string>ic_raytracing_file</string>
        </property>
-       <item>
-        <property name="text">
-         <string>off</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>interpolate</string>
-        </property>
-       </item>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_18">
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_15">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>冰云文件</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="label_13">
-       <property name="text">
-        <string>冰云晶体惯态
-  (yang2013)</string>
-       </property>
-      </widget>
-     </item>
-     <item row="9" column="1">
-      <widget class="QComboBox" name="comboBox_15">
-       <property name="option_name" stdset="0">
-        <string>cloud_overlap</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>off</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>rand</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>max</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>maxrand</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>off</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item row="6" column="2">
-      <widget class="QPushButton" name="pushButton_15">
-       <property name="text">
-        <string>设置多行</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QPushButton" name="pushButton_11">
-       <property name="text">
-        <string>设置多行</string>
+        <string>冰云参数化</string>
        </property>
       </widget>
      </item>
      <item row="5" column="1">
       <widget class="QComboBox" name="comboBox_11">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>ic_habit_yang2013_habit</string>
        </property>
@@ -617,66 +841,260 @@
        </item>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_21">
+     <item row="2" column="2">
+      <widget class="QComboBox" name="comboBox_14">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>ic_properties_inter</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>interpolate</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="pushButton_11">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>冰云参数</string>
+        <string>设置多行</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_22">
-       <property name="text">
-        <string>冰云修改</string>
+     <item row="0" column="4">
+      <widget class="QPushButton" name="pushButton_ic_file_clear">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
        </property>
-      </widget>
-     </item>
-     <item row="0" column="3">
-      <widget class="QPushButton" name="pushButton_6">
        <property name="text">
-        <string>打开</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="0">
-      <widget class="QLabel" name="label_16">
-       <property name="text">
-        <string>云占比文件</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="2">
-      <widget class="QPushButton" name="pushButton_8">
-       <property name="text">
-        <string>打开</string>
+        <string>清空</string>
        </property>
       </widget>
      </item>
      <item row="3" column="2">
       <widget class="QPushButton" name="pushButton_12">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>设置多行</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_13">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>晶体惯态
+(yang2013)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>打开</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_18">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>冰云文件</string>
        </property>
       </widget>
      </item>
      <item row="0" column="2">
       <widget class="QLineEdit" name="lineEdit_ic_file">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="option_name" stdset="0">
         <string>ic_file_path</string>
        </property>
       </widget>
      </item>
-     <item row="10" column="2">
-      <widget class="QPushButton" name="pushButton_16">
+     <item row="9" column="1">
+      <widget class="QComboBox" name="comboBox_15">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="option_name" stdset="0">
+        <string>cloud_overlap</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>rand</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>max</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>maxrand</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>off</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="7" column="2">
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>设置多行</string>
+        <string>打开</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_15">
+     <item row="8" column="2">
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>冰云参数化</string>
+        <string>打开</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="3">
+      <widget class="QPushButton" name="pushButton_ic_raytracing_clear">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>清空</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="3">
+      <widget class="QPushButton" name="pushButton_cloud_fraction_clear">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>清空</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="pushButton_ic_set_clear">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>清空</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QPushButton" name="pushButton_ic_modify_clear">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>清空</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="3">
+      <widget class="QPushButton" name="pushButton_ic_fu_clear">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>清空</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="3">
+      <widget class="QPushButton" name="pushButton_cloudcover_clear">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>清空</string>
        </property>
       </widget>
      </item>

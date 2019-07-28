@@ -17,16 +17,12 @@ public:
     ~AtmosAddDialog();
 
     QString get_output_str();
-    QString get_val();
-
     void init_tab_widget(QStringList col_header, int row_count=5);
 
 
 
 private slots:
     void on_buttonBox_accepted();
-
-    void on_buttonBox_clicked(QAbstractButton *button);
 
 private:
     Ui::AtmosAddDialog *ui;

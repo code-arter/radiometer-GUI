@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <iostream>
+#include <QThread>
+
 #include "generalpage.h"
 #include "atmospherepage.h"
 #include "inputconfshow.h"
@@ -13,7 +15,7 @@
 #include "math.h"
 #include <Python.h>
 #include "plotcurve.h"
-#include "plotdialog.h"
+#include "multidialog.h"
 #include "singledialog.h"
 
 namespace Ui {
@@ -68,7 +70,7 @@ private:
     TransModelPage *trans_mode_page;
     InputConfShow *input_conf_page;
 
-    PlotDialog *plot_dialog;
+    PlotDialog *multi_plot_dialog;
     SingleDialog *single_plot_dialog;
 
     WaitDialog *wait_dialog;
@@ -97,6 +99,8 @@ private:
 
     QSettings *config_settings;
 
+    QString task_id;
+
 
 
 signals:
@@ -105,5 +109,6 @@ signals:
     void GeneralSavePlotEvent(QString path);
     void GeneralLoadConfEvent(QString path);
 };
+
 
 #endif // MAINWINDOW_H

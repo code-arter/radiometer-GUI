@@ -34,6 +34,18 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_lineEdit_atmos_define_textChanged(const QString &arg1);
+
+    void on_pushButton_atmos_define_clear_clicked();
+
+    void on_lineEdit_mixing_ratio_textChanged(const QString &arg1);
+
+    void on_pushButton_mol_modify_clear_clicked();
+
+    void on_lineEdit_mol_modify_textChanged(const QString &arg1);
+
+    void on_pushButton_mixing_ratio_clear_clicked();
+
 private:
     Ui::AtmosPherePage *ui;
 };

@@ -6,6 +6,10 @@ SingleDialog::SingleDialog(QWidget *parent) :
     ui(new Ui::SingleDialog)
 {
     ui->setupUi(this);
+
+    this->image_dialog = new ImageDialog(this);
+    this->image_dialog->setWindowTitle("画图");
+    this->image_dialog->hide();
 }
 
 SingleDialog::~SingleDialog()
@@ -16,11 +20,16 @@ SingleDialog::~SingleDialog()
 void SingleDialog::on_pushButton_clicked()
 {
     QString x_label = this->ui->comboBox_x->currentText();
+    this->x_label = x_label;
     int x_mark = -1, y_mark = -1;
     if(x_label == "波长")
+    {
         x_mark = -1;
+    }
     else
+    {
         x_mark = 1;
+    }
     int y_index = this->ui->comboBox_y->currentIndex();
     if(y_index == 0)
         y_mark = 0;
@@ -39,11 +48,9 @@ void SingleDialog::on_pushButton_clicked()
 
     QLineSeries *test_line = new QLineSeries();
     test_line->append(m_data);
-    QChart * test = createSpectrumChart(x_mark, y_mark, test_line, x_min, x_max, y_min, y_max);
-    QChartView *chartView = new QChartView(test);
-    chartView->resize(600, 400);
-    chartView->setWindowTitle("画图");
-    chartView->show();
+    QChart * plot = createSpectrumChart(x_mark, y_mark, test_line, x_min, x_max, y_min, y_max);
+    this->image_dialog->set_plot(plot);
+    this->image_dialog->show();
 }
 
 int SingleDialog::make_points(QVector<QString> &line_list, QList<QPointF> &data_list, double &x_min, double &x_max, double &y_min, double &y_max)
@@ -57,7 +64,10 @@ int SingleDialog::make_points(QVector<QString> &line_list, QList<QPointF> &data_
         QStringList sl =line_list[index].split(" ", QString::SkipEmptyParts);
         if(sl.size() == 0)
             continue;
+
         double x = sl.at(0).toDouble();
+        if(this->x_label == "波长")
+            x = x / 1000.0;
         double y = sl.at(1).toDouble();
         if(x < x_min)
             x_min = x;
@@ -75,4 +85,3 @@ void SingleDialog::set_init(QVector<QString> &line_list)
 {
     this->line_list = line_list;
 }
-

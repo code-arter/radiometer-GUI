@@ -33,8 +33,6 @@ signals:
 private slots:
     void on_pushButton_run_clicked();
 
-    void on_pushButton_load_clicked();
-
     void on_pushButton_save_run_clicked();
 
     void on_pushButton_conf_save_clicked();
@@ -44,8 +42,6 @@ private slots:
     void on_pushButton_plot_clicked();
 
     void on_pushButton_conf_load_clicked();
-
-    void on_comboBox_global_mode_currentTextChanged(const QString &arg1);
 
     void on_comboBox_global_mode_currentIndexChanged(int index);
 
@@ -67,6 +63,8 @@ private slots:
     void on_comboBox_multi_set_activated(int index);
 
     void on_pushButton_source_file_2_clicked();
+
+    void on_lineEdit_source_file_textChanged(const QString &arg1);
 
 private:
     Ui::GeneralPage *ui;

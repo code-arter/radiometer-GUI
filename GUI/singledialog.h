@@ -2,6 +2,7 @@
 #define SINGLEDIALOG_H
 
 #include <QDialog>
+#include "imagedialog.h"
 #include "plotcurve.h"
 
 namespace Ui {
@@ -28,6 +29,9 @@ private:
     Ui::SingleDialog *ui;
 
     QVector<QString> line_list;
+    QString x_label;
+
+    ImageDialog *image_dialog;
 };
 
 #endif // SINGLEDIALOG_H

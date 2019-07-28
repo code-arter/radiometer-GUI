@@ -33,10 +33,7 @@ AtmosAddDialog::~AtmosAddDialog()
 {
     delete ui;
 }
-QString AtmosAddDialog::get_val()
-{
 
-}
 void AtmosAddDialog::on_buttonBox_accepted()
 {
     QString outptu_str = this->get_output_str();
@@ -74,9 +71,4 @@ QString AtmosAddDialog::get_output_str()
     //qDebug() << output_str;
     this->output_str = output_str;
     return output_str;
-}
-
-void AtmosAddDialog::on_buttonBox_clicked(QAbstractButton *button)
-{
-
 }

@@ -7,7 +7,7 @@
 QChart * createSpectrumChart(int xlabel_code,int ylabel_code,QLineSeries * m_series_Spectrum,float min_x,float max_x,float min_y,float max_y)
 {
    
-        QString Yl_Rad_spec_waveLen="光谱辐射亮度(w/m^2·Sr·nm)";
+        QString Yl_Rad_spec_waveLen="光谱辐射亮度(w/m^2·Sr·um)";
         QString Yl_Rad_spec_waveNum="光谱辐射亮度(w/m^2·Sr·cm-1)";
         QString Yl_Rad_inte="积分辐射亮度(w/m^2·Sr)";
         QString Yl_BT="辐射亮温(Kevin)";
