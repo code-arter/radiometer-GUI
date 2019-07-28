@@ -6,7 +6,7 @@ import sys
 import traceback
 #sys.path.append("py_work")
 import logging
-
+logging.info(sys.path)
 #import uuid
 
 
@@ -49,6 +49,8 @@ class QtConfManager(object):
             input_key, input_val = line_data.split(' ', 1)
             if(input_key == "out_file_path"):
                 self.out_file_path = input_val
+            elif(input_key == "task_id"):
+                self.task_id = input_val
             else:
                 qt_dict[input_key] = input_val
         return qt_dict
@@ -88,7 +90,7 @@ class QtConfManager(object):
 
         self.process_ic_file(qt_dict, out_dict)
 
-        return True, self.out_file_path, out_dict
+        return True, self.out_file_path, out_dict, self.task_id
 
     def process_wc_file(self, qt_dict, out_dict):
         key = "wc_file"
@@ -166,8 +168,8 @@ class QtConfManager(object):
 
 def process_qt_input(filepath, conf_path):
     qtManager = QtConfManager(filepath, conf_path)
-    is_success, out_path, response = qtManager.process_qt_input()
-    return is_success, out_path, response
+    is_success, out_path, response, task_id = qtManager.process_qt_input()
+    return is_success, out_path, response, task_id
 
 def run(in_path, script_path):
     try:
@@ -177,7 +179,7 @@ def run(in_path, script_path):
 
         conf_path = os.path.join(os.path.dirname(script_path), "qt_conf", "conf_temp.txt")
 
-        is_success, out_path, out_dict = process_qt_input(in_path, conf_path)
+        is_success, out_path, out_dict, task_id = process_qt_input(in_path, conf_path)
         if not is_success:
             return 201, u"预处理Qt文件失败！"
         dirname = os.path.join(os.path.dirname(script_path), "py_work")
@@ -186,7 +188,7 @@ def run(in_path, script_path):
         os.chdir(dirname)
         from py_work.uvspec_run import OnRun
         #import py_work.uvspec_run
-        is_success, data_log = OnRun(out_dict, out_path, log_path)
+        is_success, data_log = OnRun(out_dict, out_path, log_path, task_id)
         logging.info(data_log)
         #is_success = True
         if not is_success:
