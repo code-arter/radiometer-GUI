@@ -12,6 +12,7 @@ import pickle
 import math
 import copy
 import logging
+import shutil
 from special_process import set_option_multi_value, getRunMode, change_um_to_nm, convert_cloud_to_file, check_atmosphere_file, change_aerosol_haze, change_aerosol_season, change_aerosol_vulcan, get_atmos_file, create_new_file, create_grid_file_by_count, create_grid_file, getQtInputDict
 
 
@@ -42,7 +43,6 @@ class RunUvspecProcess(threading.Thread):
         self.output_file = output_file
         self.log = []
         self.task_id = task_id
-        logger.info(self.task_id)
     def run(self):
 
         self.log.append("Running uvspec.\nInput file: %s \nOutput file: %s\n" % \
@@ -90,9 +90,10 @@ class RunUvspecProcess(threading.Thread):
         self.log.append(data)
         self.exit_value = exit_value
 
+        '''
         with open(self.task_id, "w") as fp:
             fp.write("100")
-
+        '''
         return self.log
 
         if not exit_value or process.poll() != 0: # correcting uvspec returncodes
@@ -116,13 +117,14 @@ def Save(fname, chose_data):
         ErrorMessage(msg)
 
 @getException
-def OnRunSingle(input_list, out_file, task_id):
-    #app = wx.App(redirect=variables.redirect, filename=variables.redirect_file)
+def OnRunSingle(input_list, out_file, plot_regex, task_id):
     tmp_file = os.path.abspath(".tmp_UVSPEC.INP")
     Save(tmp_file, input_list) # Save a temporary INP file with the latest modifications
     chl_thread = RunUvspecProcess(tmp_file, out_file, task_id)
     chl_thread.start()
     chl_thread.join()
+    plot_file = "%s-%s" % (out_file, plot_regex)
+    shutil.copy(out_file, plot_file)
     return True, "".join(chl_thread.log)
 
 def SaveCycle(fname, input_data):
@@ -141,7 +143,7 @@ def SaveCycle(fname, input_data):
         ErrorMessage(msg)
 
 @getException
-def OnRunNew(data_dict, out_file):
+def OnRunNew(data_dict, out_file, plot_regex):
     out_file_list = []
     total_log = []
     total_exit_value = 0
@@ -206,14 +208,14 @@ def OnRunNew(data_dict, out_file):
     umu_list = [str(umu) for umu in double_umu_list];
     distance_list = [str(distance) for distance in double_distance_list];
 
-    key_list = [','.join(output_process), ','.join(output_quantity), ','.join(phi_list), ','.join(umu_list), ','.join(distance_list)]
+    key_list = [','.join(output_process), ','.join(output_quantity), plot_regex, ','.join(phi_list), ','.join(umu_list), ','.join(distance_list)]
     tmp_key_path = os.path.join(out_dir, "key_path")
     with open(tmp_key_path, 'w') as fp:
         fp.write('\n'.join(key_list))
     return True, "".join(total_log)
 
 @getException
-def OnRun(out_dict, out_file, log_path, task_id):
+def OnRun(out_dict, out_file, plot_regex, log_path, task_id):
 
     fh = logging.FileHandler(log_path)
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -226,11 +228,11 @@ def OnRun(out_dict, out_file, log_path, task_id):
 
     if run_mode == u"批处理模式":
         logger.info("multi")
-        return OnRunNew(out_dict, out_file)
+        return OnRunNew(out_dict, out_file, plot_regex)
     else:
         logger.info("single")
         data_list = getQtInput(out_dict)
-        return OnRunSingle(data_list, out_file, task_id)
+        return OnRunSingle(data_list, out_file, plot_regex, task_id)
 
 
 def single_process_input(help_input_dict, out_dict):

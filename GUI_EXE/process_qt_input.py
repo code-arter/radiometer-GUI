@@ -14,7 +14,7 @@ class QtConfManager(object):
 
     def __init__(self, filepath="", conf_path=""):
         self.conf_path = conf_path
-
+        self.task_id = "test"
         self.read_template()
         self.read_qt_out(filepath)
 
@@ -51,10 +51,29 @@ class QtConfManager(object):
                 self.out_file_path = input_val
             elif(input_key == "task_id"):
                 self.task_id = input_val
+            elif(input_key == "main_wave"):
+                main_wave = input_val.decode("utf-8")
+                logging.info(main_wave)
+                qt_dict[input_key] = input_val
+            elif(input_key == "output_process"):
+                output_process = input_val.decode("utf-8")
+                logging.info(output_process)
+                qt_dict[input_key] = input_val
             elif input_key == "output_quantity" and input_val == "radiance":
                 continue
             else:
                 qt_dict[input_key] = input_val
+        if main_wave == u"设置波长":
+            x_key = '0'
+        else:
+            x_key = '1'
+
+        if output_process == u"per_nm":
+            y_key = '0'
+        else:
+            y_key = '1'
+        self.plot_regex = "%s-%s" % (x_key, y_key)
+
         return qt_dict
 
     def get_out_path(self):
@@ -92,7 +111,7 @@ class QtConfManager(object):
 
         self.process_ic_file(qt_dict, out_dict)
 
-        return True, self.out_file_path, out_dict, self.task_id
+        return True, self.out_file_path, self.plot_regex, out_dict, self.task_id
 
     def process_wc_file(self, qt_dict, out_dict):
         key = "wc_file"
@@ -170,8 +189,8 @@ class QtConfManager(object):
 
 def process_qt_input(filepath, conf_path):
     qtManager = QtConfManager(filepath, conf_path)
-    is_success, out_path, response, task_id = qtManager.process_qt_input()
-    return is_success, out_path, response, task_id
+    is_success, out_path, plot_regex, response, task_id = qtManager.process_qt_input()
+    return is_success, out_path, plot_regex, response, task_id
 
 def run(in_path, script_path):
     try:
@@ -181,7 +200,7 @@ def run(in_path, script_path):
 
         conf_path = os.path.join(os.path.dirname(script_path), "qt_conf", "conf_temp.txt")
 
-        is_success, out_path, out_dict, task_id = process_qt_input(in_path, conf_path)
+        is_success, out_path, plot_regex, out_dict, task_id = process_qt_input(in_path, conf_path)
         if not is_success:
             return 201, u"预处理Qt文件失败！"
         dirname = os.path.join(os.path.dirname(script_path), "py_work")
@@ -190,7 +209,7 @@ def run(in_path, script_path):
         os.chdir(dirname)
         from py_work.uvspec_run import OnRun
         #import py_work.uvspec_run
-        is_success, data_log = OnRun(out_dict, out_path, log_path, task_id)
+        is_success, data_log = OnRun(out_dict, out_path, plot_regex, log_path, task_id)
         logging.info(data_log)
         #is_success = True
         if not is_success:
