@@ -6,7 +6,7 @@ import sys
 import traceback
 #sys.path.append("py_work")
 import logging
-logging.info(sys.path)
+#logging.info(sys.path)
 #import uuid
 
 
@@ -53,11 +53,11 @@ class QtConfManager(object):
                 self.task_id = input_val
             elif(input_key == "main_wave"):
                 main_wave = input_val.decode("utf-8")
-                logging.info(main_wave)
+                #logging.info(main_wave)
                 qt_dict[input_key] = input_val
             elif(input_key == "output_process"):
                 output_process = input_val.decode("utf-8")
-                logging.info(output_process)
+                #logging.info(output_process)
                 qt_dict[input_key] = input_val
             elif input_key == "output_quantity" and input_val == "radiance":
                 continue
@@ -210,7 +210,7 @@ def run(in_path, script_path):
         from py_work.uvspec_run import OnRun
         #import py_work.uvspec_run
         is_success, data_log = OnRun(out_dict, out_path, plot_regex, log_path, task_id)
-        logging.info(data_log)
+        #logging.info(data_log)
         #is_success = True
         if not is_success:
             return 202, u"运行失败！"
