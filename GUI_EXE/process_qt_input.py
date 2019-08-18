@@ -51,9 +51,9 @@ class QtConfManager(object):
                 self.out_file_path = input_val
             elif(input_key == "task_id"):
                 self.task_id = input_val
-            elif(input_key == "main_wave"):
-                main_wave = input_val.decode("utf-8")
-                #logging.info(main_wave)
+            elif(input_key == "output_user"):
+                output_user = input_val.decode("utf-8")
+                #logging.info(output_user)
                 qt_dict[input_key] = input_val
             elif(input_key == "output_process"):
                 output_process = input_val.decode("utf-8")
@@ -63,10 +63,10 @@ class QtConfManager(object):
                 continue
             else:
                 qt_dict[input_key] = input_val
-        if main_wave == u"设置波长":
-            x_key = '0'
-        else:
+        if output_user == u"wavenumber uu":
             x_key = '1'
+        else:
+            x_key = '0'
 
         if output_process == u"per_nm":
             y_key = '0'
