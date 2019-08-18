@@ -27,8 +27,8 @@ class QtConfManager(object):
     def read_template(self):
         self.key_conf = {}
         #return
-        print os.getcwd()
-        print sys.path[0]
+        #print os.getcwd()
+        #print sys.path[0]
         with open(self.conf_path, 'r') as fp:
             data = fp.read()
         self.key_conf = {}
@@ -41,7 +41,7 @@ class QtConfManager(object):
         with open(self.path, "r") as fp:
             data = fp.read()
         data_list = data.split('\n')
-        print data_list
+        logging.info(data_list)
 
         for line_data in data_list:
             if(line_data.startswith('#')) or not line_data:
