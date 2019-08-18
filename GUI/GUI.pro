@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
     aerosolpage.cpp \
     atmosadddialog.cpp \
+    batchdialog.cpp \
     cloudpage.cpp \
     imagedialog.cpp \
     inputconfshow.cpp \
@@ -23,7 +24,6 @@ SOURCES += main.cpp\
     generalpage.cpp \
     atmospherepage.cpp \
     commonfunction.cpp \
-    multidialog.cpp \
     plotcurve.cpp \
     singledialog.cpp \
     transmodelpage.cpp \
@@ -32,13 +32,13 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     aerosolpage.h \
     atmosadddialog.h \
+    batchdialog.h \
     cloudpage.h \
     generalpage.h \
     atmospherepage.h \
     commonfunction.h \
     imagedialog.h \
     inputconfshow.h \
-    multidialog.h \
     plotcurve.h \
     singledialog.h \
     transmodelpage.h \
@@ -47,12 +47,12 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     aerosolpage.ui \
     atmosadddialog.ui \
+    batchdialog.ui \
     cloudpage.ui \
     generalpage.ui \
     atmospherepage.ui \
     imagedialog.ui \
     inputconfshow.ui \
-    multidialog.ui \
     singledialog.ui \
     transmodelpage.ui \
     waitdialog.ui

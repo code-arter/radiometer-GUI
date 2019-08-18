@@ -12,8 +12,6 @@ GeneralPage::GeneralPage(QWidget *parent) :
     this->set_single_mode(true);
     this->on_comboBox_multi_set_activated(0);
     this->ui->pushButton_source_file_2->hide();
-
-
 }
 
 GeneralPage::~GeneralPage()
@@ -30,6 +28,24 @@ void GeneralPage::on_pushButton_run_clicked()
     else {
         this->call_main_run();
     }
+    QString path = this->ui->lineEdit_out_file->text();
+    QString x_label;
+    QString y_label;
+    if(this->ui->comboBox_output_user->currentIndex() == 2)
+        x_label = '0';
+    else
+        x_label = '1';
+
+    if(this->ui->comboBox_output_process->currentText() == "per_nm")
+        y_label = '0';
+    else
+        y_label = '1';
+    QString plot_path = QString("%1-%2-%3").arg(path).arg(x_label).arg(y_label);
+    if(this->ui->comboBox_global_mode->currentIndex() == 0)
+        this->ui->lineEdit_plot_file->setText(plot_path);
+    else {
+        this->ui->lineEdit_plot_file->setText(path);
+    }
 }
 
 void GeneralPage::on_pushButton_save_run_clicked()
@@ -38,8 +54,25 @@ void GeneralPage::on_pushButton_save_run_clicked()
     if(!path.isEmpty())
     {
         this->ui->lineEdit_out_file->setText(path);
-        this->ui->lineEdit_plot_file->setText(path);
         this->call_main_run();
+    }
+
+    QString x_label;
+    QString y_label;
+    if(this->ui->comboBox_output_user->currentIndex() == 2)
+        x_label = '0';
+    else
+        x_label = '1';
+
+    if(this->ui->comboBox_output_process->currentText() == "per_nm")
+        y_label = '0';
+    else
+        y_label = '1';
+    QString plot_path = QString("%1-%2-%3").arg(path).arg(x_label).arg(y_label);
+    if(this->ui->comboBox_global_mode->currentIndex() == 0)
+        this->ui->lineEdit_plot_file->setText(plot_path);
+    else {
+        this->ui->lineEdit_plot_file->setText(path);
     }
 }
 
@@ -166,7 +199,6 @@ void GeneralPage::on_pushButton_source_file_clicked()
 
 void GeneralPage::on_comboBox_multi_set_currentIndexChanged(const QString &arg1)
 {
-    qDebug() << arg1;
     if(arg1 == "观测俯仰角")
     {
         this->ui->lineEdit_umu_start->setDisabled(false);
@@ -256,4 +288,9 @@ void GeneralPage::on_lineEdit_source_file_textChanged(const QString &arg1)
         this->ui->pushButton_source_file_2->hide();
     else
         this->ui->pushButton_source_file_2->show();
+}
+
+void GeneralPage::on_pushButton_save_run_clicked(bool checked)
+{
+
 }

@@ -15,7 +15,7 @@
 #include "math.h"
 #include <Python.h>
 #include "plotcurve.h"
-#include "multidialog.h"
+#include "batchdialog.h"
 #include "singledialog.h"
 
 namespace Ui {
@@ -70,7 +70,7 @@ private:
     TransModelPage *trans_mode_page;
     InputConfShow *input_conf_page;
 
-    PlotDialog *multi_plot_dialog;
+    BatchDialog *multi_plot_dialog;
     SingleDialog *single_plot_dialog;
 
     WaitDialog *wait_dialog;
@@ -78,7 +78,7 @@ private:
     QString python_path;
     QString scripts_path;
 
-    QProcess *p;
+    //QProcess *p;
     QString std_out_path;
 
 

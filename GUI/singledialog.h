@@ -16,10 +16,11 @@ class SingleDialog : public QDialog
 public:
     explicit SingleDialog(QWidget *parent = nullptr);
 
-    void set_init(QVector<QString> &line_list);
+    void set_init(QString plot_x, QString plot_y, QVector<QString> &line_list);
 
     int make_points(QVector<QString> &line_list, QList<QPointF> &data_list, double &x_min, double &x_max, double &y_min, double &y_max);
 
+    int convert_x(QVector<QString> &line_list);
     ~SingleDialog();
 
 private slots:
@@ -30,6 +31,11 @@ private:
 
     QVector<QString> line_list;
     QString x_label;
+    int y_label;
+
+
+    QString plot_x;
+    QString plot_y;
 
     ImageDialog *image_dialog;
 };

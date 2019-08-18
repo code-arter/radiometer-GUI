@@ -11,9 +11,8 @@ MainWindow::MainWindow(QString conf_path, QWidget *parent) :
 
     this->load_config_file(conf_path);
 
-    this->python_path = this->get_config("mainwindow", "python27_path").toString();
-    qDebug() <<  this->python_path;
-    this->p = NULL;
+    //this->python_path = this->get_config("mainwindow", "python27_path").toString();
+    //this->p = NULL;
 
     general_page = new GeneralPage(this);
     atmosphere_page = new AtmosPherePage(this);
@@ -22,17 +21,11 @@ MainWindow::MainWindow(QString conf_path, QWidget *parent) :
     cloud_page = new CloudPage(this);
     trans_mode_page = new TransModelPage(this);
 
-    multi_plot_dialog = new PlotDialog(this);
-    multi_plot_dialog->setWindowTitle("绘图设置");
-    multi_plot_dialog->hide();
-
-    single_plot_dialog = new SingleDialog(this);
-    single_plot_dialog->setWindowTitle("绘图设置");
-    single_plot_dialog->hide();
-
-
     this->wait_dialog = new WaitDialog(this);
     this->wait_dialog->hide();
+
+    multi_plot_dialog = NULL;
+    single_plot_dialog = NULL;
 
     this->pFunhello = NULL;
 
@@ -62,8 +55,7 @@ MainWindow::~MainWindow()
     delete aerosol_page;
     delete cloud_page;
     delete trans_mode_page;
-        delete ui;
-    //this->close_python();
+    delete ui;
 }
 
 void MainWindow::init_widget_list()
@@ -204,51 +196,11 @@ int MainWindow::close_python()
 }
 int MainWindow::init_python(QString out_path)
 {
-
-
-    QFileInfo fileinfo(this->python_path);
-    QString python_home = fileinfo.path();
-    const char *p = python_home.toStdString().c_str();
-    char *tmp=const_cast<char*>(p);
-    qDebug() << tmp;
-    Py_SetPythonHome("D:/work_software/language/");
-
-
     Py_Initialize();
     if(!Py_IsInitialized())
     {
        return -1;
     }
-    /*
-    QString s_path = QCoreApplication::applicationDirPath();
-    QStringList re_path_list = s_path.split('/');
-    qDebug() << re_path_list;
-    QString re_path = re_path_list.join("\\\\");
-
-    string chdir_cmd = string("sys.path.append(\"" + s_path.toStdString() + "\")");
-    string chdir2_cmd = string("sys.path.append(\"" + re_path.toStdString() + "\")");
-    string chdir3_cmd = string("sys.path.append(\"" + string("./GUI_EXE/") + "\")");
-    string chdir4_cmd = string("sys.path.append(\"" + string(".") + "\")");
-
-    const char* cstr_cmd = chdir_cmd.c_str();
-    const char* cstr2_cmd = chdir2_cmd.c_str();
-    const char* cstr3_cmd = chdir3_cmd.c_str();
-    const char* cstr4_cmd = chdir4_cmd.c_str();
-
-    PyRun_SimpleString("import sys");
-    PyRun_SimpleString("import os");
-
-    qDebug() << "sys path： "  << cstr_cmd;
-    PyRun_SimpleString(cstr_cmd);
-    PyRun_SimpleString(cstr2_cmd);
-    PyRun_SimpleString(cstr3_cmd);
-    PyRun_SimpleString(cstr4_cmd);
-
-    PyRun_SimpleString("open(\"test.log\", \"w\").write(\" \".join(sys.path))");
-    PyRun_SimpleString("print sys.path");
-    PyRun_SimpleString("print os.getcwd()")；
-    */
-
 
     PyObject* pModule = PyImport_ImportModule("process_qt_input");  // 这里的test_py就是创建的python文件
     if (!pModule)
@@ -293,26 +245,14 @@ void MainWindow::on_general_page_out_clicked(QString path)
     out.setCodec("UTF-8");
     out<<(this->get_output_str());
 
-    QUuid id = QUuid::createUuid();
-    QString uuid = id.toString();
-    QFileInfo fileinfo(qt_out_path);
-    QString file_dir = fileinfo.path();
-    QString task_path = QString("%1/%2").arg(file_dir).arg(uuid);
-    this->task_id = QString("task_id %1\n").arg(task_path);
-    out << this->task_id;
     file.close();
 
     qDebug() << "Start to call python exe!!!";
 
-    //PythonThread *thread_1 = new PythonThread(qt_out_path);
-    //thread_1->start();
-
-    //thread_1->wait();
     this->call_python(qt_out_path);
     qDebug() << "Call python finished!!!";
     this->std_out_path = qt_out_path + ".stdout";
     this->on_readoutput();
-    //this->wait_dialog->set_path(task_path);
     this->wait_dialog->setModal(true);
     this->wait_dialog->exec();
 
@@ -325,14 +265,32 @@ void MainWindow::on_general_page_plot_clicked(QString path)
     this->read_conf(path, line_list);
     if(line_list.size() == 1 && !line_list[0].contains(" "))
     {
+        this->multi_plot_dialog = new BatchDialog(this);
+        this->multi_plot_dialog->setWindowTitle("绘图设置");
         this->multi_plot_dialog->set_init(line_list[0]);
-        this->multi_plot_dialog->show();
+        this->multi_plot_dialog->exec();
+        delete this->multi_plot_dialog;
+        this->multi_plot_dialog = NULL;
     }
     else
     {
-        this->single_plot_dialog->set_init(line_list);
-        this->single_plot_dialog->show();
+        QStringList plot_list = path.split('-');
 
+        if(plot_list.size() < 3)
+        {
+            QMessageBox::information(NULL, "警告", "指定的画图文件名称格式错误！", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+            return;
+        }
+        int plot_size = plot_list.size();
+        QString plot_y = plot_list[plot_size - 1];
+        QString plot_x = plot_list[plot_size - 2];
+
+        this->single_plot_dialog = new SingleDialog(this);
+        this->single_plot_dialog->setWindowTitle("绘图设置");
+        this->single_plot_dialog->set_init(plot_x, plot_y, line_list);
+        this->single_plot_dialog->exec();
+        delete this->single_plot_dialog;
+        this->single_plot_dialog = NULL;
     }
 }
 

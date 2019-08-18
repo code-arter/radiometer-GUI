@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PlotDialog</class>
- <widget class="QDialog" name="PlotDialog">
+ <class>BatchDialog</class>
+ <widget class="QDialog" name="BatchDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>457</width>
-    <height>341</height>
+    <width>434</width>
+    <height>330</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>70</x>
      <y>20</y>
-     <width>251</width>
+     <width>281</width>
      <height>281</height>
     </rect>
    </property>
@@ -36,8 +36,8 @@
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>211</width>
-      <height>185</height>
+      <width>241</width>
+      <height>201</height>
      </rect>
     </property>
     <property name="font">
@@ -238,7 +238,7 @@
        </property>
        <item>
         <property name="text">
-         <string>光谱辐射亮度(w/m^2·Sr·nm)</string>
+         <string>光谱辐射亮度(w/m^2·Sr·um)</string>
         </property>
        </item>
        <item>
@@ -269,7 +269,7 @@
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>230</y>
+      <y>240</y>
       <width>75</width>
       <height>23</height>
      </rect>

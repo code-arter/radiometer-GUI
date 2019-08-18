@@ -90,7 +90,7 @@
        </property>
        <item>
         <property name="text">
-         <string>光谱辐射亮度(w/m^2·Sr·nm)</string>
+         <string>光谱辐射亮度(w/m^2·Sr·um)</string>
         </property>
        </item>
        <item>

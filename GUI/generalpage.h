@@ -66,6 +66,8 @@ private slots:
 
     void on_lineEdit_source_file_textChanged(const QString &arg1);
 
+    void on_pushButton_save_run_clicked(bool checked);
+
 private:
     Ui::GeneralPage *ui;
 };

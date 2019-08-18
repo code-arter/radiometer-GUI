@@ -14,7 +14,16 @@ SingleDialog::SingleDialog(QWidget *parent) :
 
 SingleDialog::~SingleDialog()
 {
+    delete this->image_dialog;
     delete ui;
+}
+int SingleDialog::convert_x(QVector<QString> &line_list)
+{
+    for(int index =0; index < line_list.size(); index++)
+    {
+
+    }
+
 }
 
 void SingleDialog::on_pushButton_clicked()
@@ -30,7 +39,10 @@ void SingleDialog::on_pushButton_clicked()
     {
         x_mark = 1;
     }
+
     int y_index = this->ui->comboBox_y->currentIndex();
+    this->y_label = y_index;
+
     if(y_index == 0)
         y_mark = 0;
     else if(y_index == 1)
@@ -41,7 +53,6 @@ void SingleDialog::on_pushButton_clicked()
         y_mark = 3;
     else if(y_index == 4)
         y_mark = 5;
-    qDebug() << y_index;
     QList<QPointF> m_data;
     double x_min, x_max,  y_min, y_max;
     this->make_points(this->line_list, m_data, x_min, x_max, y_min, y_max);
@@ -59,6 +70,8 @@ int SingleDialog::make_points(QVector<QString> &line_list, QList<QPointF> &data_
     x_max = 0.0;
     y_min = 99999999999;
     y_max = 0.0;
+
+    double c = 2.998e8;
     for(int index = 0; index < line_list.size(); index++)
     {
         QStringList sl =line_list[index].split(" ", QString::SkipEmptyParts);
@@ -67,8 +80,39 @@ int SingleDialog::make_points(QVector<QString> &line_list, QList<QPointF> &data_
 
         double x = sl.at(0).toDouble();
         if(this->x_label == "波长")
-            x = x / 1000.0;
+        {
+            if(this->plot_x == '0')
+            {
+                x = x / 1000.0;
+            }
+            else
+            {
+                x = 10000.0 / x;
+            }
+        }
+        else
+        {
+            if(this->plot_x == '0')
+            {
+                x = x / 1000.0;
+                x = 10000.0 / x;
+            }
+        }
         double y = sl.at(1).toDouble();
+        if(this->y_label == 0)
+        {
+            if(this->plot_y == '1')
+            {
+                y = y * 3.1415926 * c / x / x /100000000;
+            }
+        }
+        else if(this->y_label == 1)
+        {
+            if(this->plot_y == '0')
+            {
+                y = y * 100000000 * x * x / c / 3.1415926;
+            }
+        }
         if(x < x_min)
             x_min = x;
         if(x > x_max)
@@ -81,7 +125,11 @@ int SingleDialog::make_points(QVector<QString> &line_list, QList<QPointF> &data_
     }
     return 0;
 }
-void SingleDialog::set_init(QVector<QString> &line_list)
+void SingleDialog::set_init(QString plot_x, QString plot_y, QVector<QString> &line_list)
 {
+
+    this->plot_x = plot_x;
+    this->plot_y = plot_y;
+
     this->line_list = line_list;
 }

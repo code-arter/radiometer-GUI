@@ -41,6 +41,7 @@ private:
     QStringList distance;
     QStringList output_process;
     QStringList output_quantity;
+    QStringList plot_regex;
 
     ImageDialog *image_dialog;
 

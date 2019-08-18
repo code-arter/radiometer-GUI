@@ -44,9 +44,12 @@ void PlotDialog::set_init(QString dir)
     this->read_conf(dir + "/key_path", key_list);
     this->output_process = key_list[0].split(",");
     this->output_quantity = key_list[1].split(",");
-    this->phi = key_list[2].split(",");
-    this->umu = key_list[3].split(",");
-    this->distance = key_list[4].split(",");
+    this->plot_regex = key_list[2].split("-");
+    qDebug() << this->plot_regex ;
+
+    this->phi = key_list[3].split(",");
+    this->umu = key_list[4].split(",");
+    this->distance = key_list[5].split(",");
     qDebug() << output_process << output_quantity;
     qDebug() << phi << umu << distance;
 

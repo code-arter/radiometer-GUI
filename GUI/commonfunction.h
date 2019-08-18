@@ -12,7 +12,7 @@
 #include <QFile>
 #include <QFileDialog>
 #include <math.h>
-#include <QProcess>
+//#include <QProcess>
 #include <QMutex>
 #include <QDateTime>
 #include <QApplication>

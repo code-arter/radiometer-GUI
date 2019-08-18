@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
 
 
     qInstallMessageHandler(myMsgOutput);
-    qDebug() << "for test";
 
     QPixmap pixmap(splash_path);
     QSplashScreen splash(pixmap);

@@ -1,23 +1,24 @@
-#include "plotdialog.h"
-#include "ui_plotdialog.h"
+#include "batchdialog.h"
+#include "ui_batchdialog.h"
 
-PlotDialog::PlotDialog(QWidget *parent) :
+BatchDialog::BatchDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::PlotDialog)
+    ui(new Ui::BatchDialog)
 {
     ui->setupUi(this);
+
+    this->image_dialog = new ImageDialog(this);
+    this->image_dialog->setWindowTitle("画图");
+    //this->image_dialog;
+    this->image_dialog->hide();
 }
 
-PlotDialog::~PlotDialog()
+BatchDialog::~BatchDialog()
 {
     delete ui;
 }
 
-void PlotDialog::set_plot(QChart *chart)
-{
-    //this->ui->graphicsView->setc;
-}
-void PlotDialog::read_conf(QString path, QVector<QString> &line_list)
+void BatchDialog::read_conf(QString path, QVector<QString> &line_list)
 {
     QFile file(path);
     file.open(QIODevice::ReadOnly|QIODevice::Text);
@@ -29,26 +30,26 @@ void PlotDialog::read_conf(QString path, QVector<QString> &line_list)
     file.close();
 }
 
-void PlotDialog::set_init(QString dir)
+void BatchDialog::set_init(QString dir)
 {
 
     this->plot_dir = dir;
-
     this->ui->comboBox_plot_phi->clear();
     this->ui->comboBox_plot_umu->clear();
     this->ui->comboBox_plot_distance->clear();
     this->ui->comboBox_quantity->setDisabled(true);
 
-
     QVector<QString> key_list;
     this->read_conf(dir + "/key_path", key_list);
     this->output_process = key_list[0].split(",");
     this->output_quantity = key_list[1].split(",");
-    this->phi = key_list[2].split(",");
-    this->umu = key_list[3].split(",");
-    this->distance = key_list[4].split(",");
-    qDebug() << output_process << output_quantity;
-    qDebug() << phi << umu << distance;
+    this->plot_regex = key_list[2].split("-");
+    this->plot_x = this->plot_regex[0];
+    this->plot_y = this->plot_regex[1];
+
+    this->phi = key_list[3].split(",");
+    this->umu = key_list[4].split(",");
+    this->distance = key_list[5].split(",");
 
     for(int index = phi.size() - 1; index >= 0; index--)
     {
@@ -63,7 +64,8 @@ void PlotDialog::set_init(QString dir)
         this->ui->comboBox_plot_distance->addItem(distance[index]);
     }
 }
-int PlotDialog::make_points(QVector<QString> &line_list, QList<QPointF> &data_list, double &x_min, double &x_max, double &y_min, double &y_max)
+
+int BatchDialog::make_points(QVector<QString> &line_list, QList<QPointF> &data_list, double &x_min, double &x_max, double &y_min, double &y_max)
 {
     x_min = 99999999999;
     x_max = 0.0;
@@ -76,6 +78,44 @@ int PlotDialog::make_points(QVector<QString> &line_list, QList<QPointF> &data_li
             continue;
         double x = sl.at(0).toDouble();
         double y = sl.at(1).toDouble();
+        if(this->ui->comboBox->currentIndex() == 0)
+        {
+            double c = 2.998e8;
+            if(this->x_label == "波长")
+            {
+                if(this->plot_x == '0')
+                {
+                    x = x / 1000.0;
+                }
+                else
+                {
+                    x = 10000.0 / x;
+                }
+            }
+            else
+            {
+                if(this->plot_x == '0')
+                {
+                    x = x / 1000.0;
+                    x = 10000.0 / x;
+                }
+            }
+            if(this->y_label == 0)
+            {
+                if(this->plot_y == '1')
+                {
+                    y = y * 3.1415926 * c / x / x /100000000;
+                }
+            }
+            else if(this->y_label == 1)
+            {
+                if(this->plot_y == '0')
+                {
+                    y = y * 100000000 * x * x / c / 3.1415926;
+                }
+            }
+        }
+
         if(x < x_min)
             x_min = x;
         if(x > x_max)
@@ -89,7 +129,7 @@ int PlotDialog::make_points(QVector<QString> &line_list, QList<QPointF> &data_li
     return 0;
 }
 
-void PlotDialog::on_pushButton_clicked()
+void BatchDialog::on_pushButton_clicked()
 {
     QString plot_method = this->ui->comboBox->currentText();
     QString phi = this->ui->comboBox_plot_phi->currentText();
@@ -103,20 +143,56 @@ void PlotDialog::on_pushButton_clicked()
         QString filename = QString("%1_%2_radiance_spectral").arg(umu).arg(distance);
         QString filepath = QString("%1/%2").arg(this->plot_dir).arg(filename);
 
+        QFileInfo file_info(filepath);
+        if(!file_info.exists())
+        {
+            QMessageBox::information(NULL, "警告", "找不到对应的输出文件！", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+            return;
+        }
+
         QVector<QString> line_list;
         this->read_conf(filepath, line_list);
 
         QList<QPointF> m_data;
         double x_min, x_max,  y_min, y_max;
+
+        //add for choose x and y
+        QString x_label = this->ui->comboBox_x->currentText();
+        this->x_label = x_label;
+        int x_mark = -1, y_mark = -1;
+        if(x_label == "波长")
+        {
+            x_mark = -1;
+        }
+        else
+        {
+            x_mark = 1;
+        }
+
+        int y_index = this->ui->comboBox_y->currentIndex();
+        this->y_label = y_index;
+
+        if(y_index == 0)
+            y_mark = 0;
+        else if(y_index == 1)
+            y_mark = 1;
+        else if(y_index == 2)
+            y_mark = 2;
+        else if(y_index == 3)
+            y_mark = 3;
+        else if(y_index == 4)
+            y_mark = 5;
+
         this->make_points(line_list, m_data, x_min, x_max, y_min, y_max);
 
         QLineSeries *test_line = new QLineSeries();
         test_line->append(m_data);
-        QChart * test = createSpectrumChart(-1, -1, test_line, x_min, x_max, y_min, y_max);
-        QChartView *chartView = new QChartView(test);
-        chartView->resize(600, 400);
-        chartView->setWindowTitle("画图");
-        chartView->show();
+
+
+        QChart * plot_1 = createSpectrumChart(x_mark, y_mark, test_line, x_min, x_max, y_min, y_max);
+
+        this->image_dialog->set_plot(plot_1);
+        this->image_dialog->show();
     }
     else
     {
@@ -145,8 +221,6 @@ void PlotDialog::on_pushButton_clicked()
                     first_line = line_list[index];
             }
             QStringList phi_list = first_line.split(" ", QString::SkipEmptyParts);
-            qDebug() << phi_list;
-            qDebug() << this->phi;
             for(int index =0 ;index < this->phi.size(); index++)
             {
                 line_points.append(QString("%1 %2").arg(this->phi[index]).arg(phi_list[index+1]));
@@ -177,7 +251,6 @@ void PlotDialog::on_pushButton_clicked()
                 }
                 QStringList phi_list = first_line.split(" ", QString::SkipEmptyParts);
                 QString points = QString("%1 %2").arg(this->umu[index]).arg(phi_list[1]);
-                qDebug() << points;
                 line_points.append(points);
             }
         }
@@ -207,11 +280,9 @@ void PlotDialog::on_pushButton_clicked()
                 QStringList phi_list = first_line.split(" ", QString::SkipEmptyParts);
 
                 QString points = QString("%1 %2").arg(this->distance[index]).arg(phi_list[1]);
-                qDebug() << points;
                 line_points.append(points);
             }
         }
-
 
         QList<QPointF> m_data;
         double x_min, x_max,  y_min, y_max;
@@ -219,26 +290,29 @@ void PlotDialog::on_pushButton_clicked()
 
         QLineSeries *test_line = new QLineSeries();
         test_line->append(m_data);
-        QChart * test = createSpectrumChart(x_mark, y_mark, test_line, x_min, x_max, y_min, y_max);
-        QChartView *chartView = new QChartView(test);
-        chartView->resize(600, 400);
-        chartView->setWindowTitle("画图");
-        chartView->show();
+        QChart * plot_2 = createSpectrumChart(x_mark, y_mark, test_line, x_min, x_max, y_min, y_max);
+        //this->image_dialog->resize(600, 400);
+        this->image_dialog->set_plot(plot_2);
+        this->image_dialog->show();
     }
 }
 
-void PlotDialog::on_comboBox_currentIndexChanged(const QString &arg1)
+void BatchDialog::on_comboBox_currentIndexChanged(const QString &arg1)
 {
     if(arg1 == "spectral")
     {
         this->ui->comboBox_quantity->setDisabled(true);
+        this->ui->comboBox_x->setDisabled(false);
+        this->ui->comboBox_y->setDisabled(false);
     }
     else {
         this->ui->comboBox_quantity->setDisabled(false);
+        this->ui->comboBox_x->setDisabled(true);
+        this->ui->comboBox_y->setDisabled(true);
     }
 }
 
-void PlotDialog::on_comboBox_activated(const QString &arg1)
+void BatchDialog::on_comboBox_currentTextChanged(const QString &arg1)
 {
-
+    ;
 }

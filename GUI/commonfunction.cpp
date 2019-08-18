@@ -111,7 +111,6 @@ void myMsgOutput(QtMsgType type, const QMessageLogContext &context, const QStrin
         abort();
     }
     QString log_path = QCoreApplication::applicationDirPath() + "/log/run_log";
-    qDebug() << log_path;
 
     QFile file(log_path);
     file.open(QIODevice::ReadWrite | QIODevice::Append);
